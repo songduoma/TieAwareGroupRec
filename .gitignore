@@ -1,0 +1,15 @@
+# Logs
+**/log/
+**/*.log
+**/metrics.txt
+
+# macOS
+.DS_Store
+
+# Python
+*.pyc
+__pycache__/
+
+# IDE
+.vs/
+.vscode/
