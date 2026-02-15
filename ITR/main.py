@@ -1,4 +1,6 @@
 import os
+os.environ.setdefault("PYTHONHASHSEED", "0")
+os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
 import time
 import torch
 import random
@@ -133,11 +135,20 @@ def init_density_cluster_center(user_embedding_online):
 
 
 def set_seed(seed):
+    os.environ["PYTHONHASHSEED"] = str(seed)
+    os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
     np.random.seed(seed)
     random.seed(seed)
     torch.manual_seed(seed) 
     torch.cuda.manual_seed_all(seed) 
     torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+    if hasattr(torch.backends, "cuda") and hasattr(torch.backends.cuda, "matmul"):
+        torch.backends.cuda.matmul.allow_tf32 = False
+    if hasattr(torch.backends.cudnn, "allow_tf32"):
+        torch.backends.cudnn.allow_tf32 = False
+    if hasattr(torch, "use_deterministic_algorithms"):
+        torch.use_deterministic_algorithms(True)
 
 
 def training(train_loader, epoch, type_m="group"):
@@ -206,7 +217,7 @@ if __name__ == "__main__":
     running_device = torch.device(args.device)
 
     user_path, group_path = f"./data/{args.dataset}/userRating", f"./data/{args.dataset}/groupRating"
-    dataset = GroupDataset(user_path, group_path, num_negatives=args.num_negatives, dataset=args.dataset)
+    dataset = GroupDataset(user_path, group_path, num_negatives=args.num_negatives, dataset=args.dataset, seed=args.seed)
     num_users, num_items, num_groups = dataset.num_users, dataset.num_items, dataset.num_groups
     print(f" #Users {num_users}, #Items {num_items}, #Groups {num_groups}\n")
 
@@ -255,7 +266,11 @@ if __name__ == "__main__":
         g2i_loss.backward()
         optimizer.step()
 
-        user_loss = training(dataset.get_user_dataloader(args.batch_size), epoch_id, "user")
+        user_loss = training(
+            dataset.get_user_dataloader(args.batch_size, epoch=epoch_id),
+            epoch_id,
+            "user",
+        )
 
 
         if (epoch_id + 1) % 100 == 0:

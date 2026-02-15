@@ -6,9 +6,10 @@ import numpy as np
 
 
 class GroupDataset(object):
-    def __init__(self, user_path, group_path, num_negatives, dataset="Mafengwo"):
+    def __init__(self, user_path, group_path, num_negatives, dataset="Mafengwo", seed=0):
         print(f"[{dataset.upper()}] loading...")
         self.num_negatives = num_negatives
+        self.seed = int(seed)
 
         # User data
         if dataset == "MafengwoS":
@@ -41,6 +42,11 @@ class GroupDataset(object):
         self.light_gcn_graph = build_light_gcn_graph(self.group_train_matrix, self.num_groups, self.num_group_net_items)
         print(f"\033[0;30;43m{dataset.upper()} finish loading!\033[0m", end='')
 
+    def _get_shuffle_generator(self, offset, epoch=0):
+        generator = torch.Generator()
+        generator.manual_seed(self.seed + int(epoch) * 1000003 + offset)
+        return generator
+
     def get_train_instances(self, train):
         """Generate train samples (user, pos_item, neg_itm)"""
         users, pos_items, neg_items = [], [], []
@@ -59,12 +65,22 @@ class GroupDataset(object):
         pos_neg_items = [[pos_item, neg_item] for pos_item, neg_item in zip(pos_items, neg_items)]
         return users, pos_neg_items
 
-    def get_user_dataloader(self, batch_size):
+    def get_user_dataloader(self, batch_size, epoch=0):
         users, pos_neg_items = self.get_train_instances(self.user_train_matrix)
         train_data = TensorDataset(torch.LongTensor(users), torch.LongTensor(pos_neg_items))
-        return DataLoader(train_data, batch_size=batch_size, shuffle=True)
+        return DataLoader(
+            train_data,
+            batch_size=batch_size,
+            shuffle=True,
+            generator=self._get_shuffle_generator(1, epoch),
+        )
 
-    def get_group_dataloader(self, batch_size):
+    def get_group_dataloader(self, batch_size, epoch=0):
         groups, pos_neg_items = self.get_train_instances(self.group_train_matrix)
         train_data = TensorDataset(torch.LongTensor(groups), torch.LongTensor(pos_neg_items))
-        return DataLoader(train_data, batch_size=batch_size, shuffle=True)
+        return DataLoader(
+            train_data,
+            batch_size=batch_size,
+            shuffle=True,
+            generator=self._get_shuffle_generator(2, epoch),
+        )

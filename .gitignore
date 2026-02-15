@@ -3,6 +3,9 @@
 **/*.log
 **/metrics.txt
 
+# checkpoints
+**/ckpts/
+
 # macOS
 .DS_Store
 

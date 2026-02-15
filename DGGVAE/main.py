@@ -1,5 +1,9 @@
 import sys
 
+import os
+os.environ.setdefault("PYTHONHASHSEED", "0")
+os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
+
 import torch
 import random
 import torch.optim as optim
@@ -13,7 +17,6 @@ import argparse
 import time
 from dataloader import GroupDataset
 # from tensorboardX import SummaryWriter
-import os
 import logging
 from sklearn import manifold
 
@@ -21,11 +24,20 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
 
 def set_seed(seed):
+    os.environ["PYTHONHASHSEED"] = str(seed)
+    os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
     np.random.seed(seed)
     random.seed(seed)
     torch.manual_seed(seed)  # cpu
     torch.cuda.manual_seed_all(seed)  # gpu
     torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+    if hasattr(torch.backends, "cuda") and hasattr(torch.backends.cuda, "matmul"):
+        torch.backends.cuda.matmul.allow_tf32 = False
+    if hasattr(torch.backends.cudnn, "allow_tf32"):
+        torch.backends.cudnn.allow_tf32 = False
+    if hasattr(torch, "use_deterministic_algorithms"):
+        torch.use_deterministic_algorithms(True)
 
 
 def training(u_loader, g_loader, epoch, type_m="group", group_member_dict=None, group_item_dict=None):
@@ -76,20 +88,22 @@ if __name__ == "__main__":
     parser.add_argument("--predictor", type=str, default="MLP")
     parser.add_argument("--loss_type", type=str, default="BPR")
     # parser.add_argument("--k", type=list, default=[40, 50, 60])
-    parser.add_argument("--k", type=list, default=[60])
+    parser.add_argument("--k", type=list, default=[50])
     parser.add_argument("--kl_weight", type=list, default=[0.1])
     # parser.add_argument("--g_layers", type=list, default=[2, 3])
     # parser.add_argument("--cl_weight", type=list, default=[0, 0.01, 0.1])
     # parser.add_argument("--temp", type=list, default=[0.2, 0.4, 0.6])
     parser.add_argument("--g_layers", type=list, default=[3])
     parser.add_argument("--cl_weight", type=list, default=[0.01])
-    parser.add_argument("--temp", type=list, default=[0.4])
+    parser.add_argument("--temp", type=list, default=[0.2])
 
     args = parser.parse_args()
     set_seed(args.seed)
     logfilename = '{}-{}.log'.format(args.dataset, get_local_time())
-
-    logfilepath = os.path.join('log/', logfilename)
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    log_dir = os.path.join(base_dir, "log")
+    os.makedirs(log_dir, exist_ok=True)
+    logfilepath = os.path.join(log_dir, logfilename)
 
     file_handler = logging.FileHandler(logfilepath, mode='a', encoding='utf8')
     file_handler.setFormatter(logging.Formatter('%(levelname)s: %(message)s'))
@@ -122,7 +136,14 @@ if __name__ == "__main__":
 
         # Load dataset
         user_path, group_path = f"./data/{args.dataset}/userRating", f"./data/{args.dataset}/groupRating"
-        dataset = GroupDataset(user_path, group_path, num_negatives=args.num_negatives, dataset=args.dataset, k=k_info)
+        dataset = GroupDataset(
+            user_path,
+            group_path,
+            num_negatives=args.num_negatives,
+            dataset=args.dataset,
+            k=k_info,
+            seed=args.seed,
+        )
         num_users, num_items, num_groups = dataset.num_users, dataset.num_items, dataset.num_groups
         logging.info(" #Users {}, #Items {}, #Groups {}\n".format(num_users, num_items, num_groups))
 
@@ -144,8 +165,8 @@ if __name__ == "__main__":
 
         for epoch_id in range(args.epoch):
             train_model.train()
-            g_loader = dataset.get_group_dataloader(args.batch_size)
-            u_loader = dataset.get_user_dataloader(args.batch_size)
+            g_loader = dataset.get_group_dataloader(args.batch_size, epoch=epoch_id)
+            u_loader = dataset.get_user_dataloader(args.batch_size, epoch=epoch_id)
             group_loss = training(u_loader, g_loader, epoch_id, "group", group_member_dict, group_item_dict)
 
             user_loss = training(u_loader, g_loader, epoch_id, "user", group_member_dict, group_item_dict)

@@ -3,8 +3,9 @@ from datautil import *
 
 
 class GroupDataset(object):
-    def __init__(self, dataset):
+    def __init__(self, dataset, seed=0):
         print(f"[{dataset}] loading...".upper())
+        self.seed = int(seed)
         user_path, group_path = (
             f"./data/{dataset}/userRating",
             f"./data/{dataset}/groupRating",
@@ -75,6 +76,11 @@ class GroupDataset(object):
 
         print(f"[{dataset}] loaded!".upper())
 
+    def _get_shuffle_generator(self, offset, epoch=0):
+        generator = torch.Generator()
+        generator.manual_seed(self.seed + int(epoch) * 1000003 + offset)
+        return generator
+
     def get_train_instances(self, train, num_negatives):
         users, pos_items, neg_items = [], [], []
 
@@ -93,20 +99,30 @@ class GroupDataset(object):
         ]
         return users, pos_neg_items
 
-    def get_user_train_dataloader(self, batch_size, num_negatives):
+    def get_user_train_dataloader(self, batch_size, num_negatives, epoch=0):
         users, pos_neg_items = self.get_train_instances(
             self.user_train_matrix, num_negatives
         )
         train_data = TensorDataset(
             torch.LongTensor(users), torch.LongTensor(pos_neg_items)
         )
-        return DataLoader(train_data, batch_size=batch_size, shuffle=True)
+        return DataLoader(
+            train_data,
+            batch_size=batch_size,
+            shuffle=True,
+            generator=self._get_shuffle_generator(1, epoch),
+        )
 
-    def get_group_train_dataloader(self, batch_size, num_negatives):
+    def get_group_train_dataloader(self, batch_size, num_negatives, epoch=0):
         groups, pos_neg_items = self.get_train_instances(
             self.group_train_matrix, num_negatives
         )
         train_data = TensorDataset(
             torch.LongTensor(groups), torch.LongTensor(pos_neg_items)
         )
-        return DataLoader(train_data, batch_size=batch_size, shuffle=True)
+        return DataLoader(
+            train_data,
+            batch_size=batch_size,
+            shuffle=True,
+            generator=self._get_shuffle_generator(2, epoch),
+        )

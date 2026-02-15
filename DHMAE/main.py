@@ -1,9 +1,12 @@
+import os
+os.environ.setdefault("PYTHONHASHSEED", "0")
+os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
+
 import torch
 import torch.optim as optim
 import numpy as np
 import time
 import random
-import os
 import argparse
 from dataloader import GroupDataset
 from metrics import evaluate as evaluate_metrics
@@ -18,11 +21,20 @@ os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
 
 
 def set_seed(seed):
+    os.environ["PYTHONHASHSEED"] = str(seed)
+    os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
     np.random.seed(seed)
     random.seed(seed)
     torch.manual_seed(seed)  # cpu
     torch.cuda.manual_seed_all(seed)  # gpu
     torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+    if hasattr(torch.backends, "cuda") and hasattr(torch.backends.cuda, "matmul"):
+        torch.backends.cuda.matmul.allow_tf32 = False
+    if hasattr(torch.backends.cudnn, "allow_tf32"):
+        torch.backends.cudnn.allow_tf32 = False
+    if hasattr(torch, "use_deterministic_algorithms"):
+        torch.use_deterministic_algorithms(True)
 
 
 def training(model, optimizer, train_loader, type_m):
@@ -91,7 +103,7 @@ if __name__ == "__main__":
     print(vars(args))
     print("= = = = = = = = = = = = = = = = = = = =")
     # load dataset
-    dataset = GroupDataset(dataset=args.dataset)
+    dataset = GroupDataset(dataset=args.dataset, seed=args.seed)
     # create model
     train_model = DHMAE(
         dataset.num_users,
@@ -116,13 +128,17 @@ if __name__ == "__main__":
         user_loss = training(
             train_model,
             optimizer,
-            dataset.get_user_train_dataloader(args.batch_size, args.num_negatives),
+            dataset.get_user_train_dataloader(
+                args.batch_size, args.num_negatives, epoch=epoch_id
+            ),
             "user",
         )
         group_loss = training(
             train_model,
             optimizer,
-            dataset.get_group_train_dataloader(args.batch_size, args.num_negatives),
+            dataset.get_group_train_dataloader(
+                args.batch_size, args.num_negatives, epoch=epoch_id
+            ),
             "group",
         )
 
