@@ -7,10 +7,9 @@ from torch.utils.data import TensorDataset, DataLoader
 
 
 class GroupDataset(object):
-    def __init__(self, user_path, group_path, num_negatives, dataset="Mafengwo", seed=0):
+    def __init__(self, user_path, group_path, num_negatives, dataset="Mafengwo"):
         print(f"[{dataset.upper()}] loading...")
         self.num_negatives = num_negatives
-        self.seed = int(seed)
 
         if dataset == "MafengwoS":
             self.user_train_matrix = load_rating_file_to_matrix(user_path + "Train.txt", num_users=11026, num_items=1235)
@@ -38,11 +37,6 @@ class GroupDataset(object):
         self.light_gcn_graph = build_light_gcn_graph(self.group_train_matrix, self.num_groups, self.num_group_net_items)
         print(f"\033[0;30;43m{dataset.upper()} finish loading!\033[0m", end='')
 
-    def _get_shuffle_generator(self, offset, epoch=0):
-        generator = torch.Generator()
-        generator.manual_seed(self.seed + int(epoch) * 1000003 + offset)
-        return generator
-
     def get_train_instances(self, train):
         users, pos_items, neg_items = [], [], []
 
@@ -60,25 +54,15 @@ class GroupDataset(object):
         pos_neg_items = [[pos_item, neg_item] for pos_item, neg_item in zip(pos_items, neg_items)]
         return users, pos_neg_items
 
-    def get_user_dataloader(self, batch_size, epoch=0):
+    def get_user_dataloader(self, batch_size):
         users, pos_neg_items = self.get_train_instances(self.user_train_matrix)
         train_data = TensorDataset(torch.LongTensor(users), torch.LongTensor(pos_neg_items))
-        return DataLoader(
-            train_data,
-            batch_size=batch_size,
-            shuffle=True,
-            generator=self._get_shuffle_generator(1, epoch),
-        )
+        return DataLoader(train_data, batch_size=batch_size, shuffle=True)
 
-    def get_group_dataloader(self, batch_size, epoch=0):
+    def get_group_dataloader(self, batch_size):
         groups, pos_neg_items = self.get_train_instances(self.group_train_matrix)
         train_data = TensorDataset(torch.LongTensor(groups), torch.LongTensor(pos_neg_items))
-        return DataLoader(
-            train_data,
-            batch_size=batch_size,
-            shuffle=True,
-            generator=self._get_shuffle_generator(2, epoch),
-        )
+        return DataLoader(train_data, batch_size=batch_size, shuffle=True)
 
 
 def load_rating_file_to_list(filename):

@@ -1,6 +1,4 @@
 import os
-os.environ.setdefault("PYTHONHASHSEED", "0")
-os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
 
 import torch
 import torch.optim as optim
@@ -10,7 +8,9 @@ import random
 import argparse
 from dataloader import GroupDataset
 from metrics import evaluate as evaluate_metrics
-from metrics_after import evaluate as evaluate_metrics_after
+from metrics_first import evaluate as evaluate_metrics_first
+from metrics_last import evaluate as evaluate_metrics_last
+from metrics_tie_aware import evaluate as evaluate_metrics_tie_aware
 from model import DHMAE
 import warnings
 
@@ -21,20 +21,10 @@ os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
 
 
 def set_seed(seed):
-    os.environ["PYTHONHASHSEED"] = str(seed)
-    os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
     np.random.seed(seed)
     random.seed(seed)
     torch.manual_seed(seed)  # cpu
     torch.cuda.manual_seed_all(seed)  # gpu
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
-    if hasattr(torch.backends, "cuda") and hasattr(torch.backends.cuda, "matmul"):
-        torch.backends.cuda.matmul.allow_tf32 = False
-    if hasattr(torch.backends.cudnn, "allow_tf32"):
-        torch.backends.cudnn.allow_tf32 = False
-    if hasattr(torch, "use_deterministic_algorithms"):
-        torch.use_deterministic_algorithms(True)
 
 
 def training(model, optimizer, train_loader, type_m):
@@ -103,7 +93,7 @@ if __name__ == "__main__":
     print(vars(args))
     print("= = = = = = = = = = = = = = = = = = = =")
     # load dataset
-    dataset = GroupDataset(dataset=args.dataset, seed=args.seed)
+    dataset = GroupDataset(dataset=args.dataset)
     # create model
     train_model = DHMAE(
         dataset.num_users,
@@ -128,17 +118,13 @@ if __name__ == "__main__":
         user_loss = training(
             train_model,
             optimizer,
-            dataset.get_user_train_dataloader(
-                args.batch_size, args.num_negatives, epoch=epoch_id
-            ),
+            dataset.get_user_train_dataloader(args.batch_size, args.num_negatives),
             "user",
         )
         group_loss = training(
             train_model,
             optimizer,
-            dataset.get_group_train_dataloader(
-                args.batch_size, args.num_negatives, epoch=epoch_id
-            ),
+            dataset.get_group_train_dataloader(args.batch_size, args.num_negatives),
             "group",
         )
 
@@ -152,11 +138,13 @@ if __name__ == "__main__":
 
     metric_evaluators = [
         ("metrics.py", evaluate_metrics),
-        ("metrics_after.py", evaluate_metrics_after),
+        ("metrics_first.py", evaluate_metrics_first),
+        ("metrics_last.py", evaluate_metrics_last),
+        ("metrics_tie_aware.py", evaluate_metrics_tie_aware),
     ]
     for metric_name, evaluator in metric_evaluators:
         print(metric_name)
-        if metric_name == "metrics_after.py":
+        if metric_name == "metrics_tie_aware.py":
             user_hrs, user_ndcgs = evaluator(
                 train_model,
                 dataset.user_test_ratings,
@@ -165,7 +153,7 @@ if __name__ == "__main__":
                 args.topK,
                 "user",
                 print_pred_score_stats=True,
-                pred_score_stats_prefix="[metrics_after.py/user final evaluate]",
+                pred_score_stats_prefix="[metrics_tie_aware.py/user final evaluate]",
             )
             group_hrs, group_ndcgs = evaluator(
                 train_model,
@@ -175,7 +163,7 @@ if __name__ == "__main__":
                 args.topK,
                 "group",
                 print_pred_score_stats=True,
-                pred_score_stats_prefix="[metrics_after.py/group final evaluate]",
+                pred_score_stats_prefix="[metrics_tie_aware.py/group final evaluate]",
             )
         else:
             user_hrs, user_ndcgs = evaluator(

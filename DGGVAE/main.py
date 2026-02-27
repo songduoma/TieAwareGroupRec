@@ -1,15 +1,15 @@
 import sys
 
 import os
-os.environ.setdefault("PYTHONHASHSEED", "0")
-os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
 
 import torch
 import random
 import torch.optim as optim
 import numpy as np
 from metrics import evaluate as evaluate_metrics
-from metrics_after import evaluate as evaluate_metrics_after
+from metrics_first import evaluate as evaluate_metrics_first
+from metrics_last import evaluate as evaluate_metrics_last
+from metrics_tie_aware import evaluate as evaluate_metrics_tie_aware
 from model import DGGVAE
 from datetime import datetime
 from utils import get_local_time
@@ -24,20 +24,10 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
 
 def set_seed(seed):
-    os.environ["PYTHONHASHSEED"] = str(seed)
-    os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
     np.random.seed(seed)
     random.seed(seed)
     torch.manual_seed(seed)  # cpu
     torch.cuda.manual_seed_all(seed)  # gpu
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
-    if hasattr(torch.backends, "cuda") and hasattr(torch.backends.cuda, "matmul"):
-        torch.backends.cuda.matmul.allow_tf32 = False
-    if hasattr(torch.backends.cudnn, "allow_tf32"):
-        torch.backends.cudnn.allow_tf32 = False
-    if hasattr(torch, "use_deterministic_algorithms"):
-        torch.use_deterministic_algorithms(True)
 
 
 def training(u_loader, g_loader, epoch, type_m="group", group_member_dict=None, group_item_dict=None):
@@ -88,22 +78,20 @@ if __name__ == "__main__":
     parser.add_argument("--predictor", type=str, default="MLP")
     parser.add_argument("--loss_type", type=str, default="BPR")
     # parser.add_argument("--k", type=list, default=[40, 50, 60])
-    parser.add_argument("--k", type=list, default=[50])
+    parser.add_argument("--k", type=list, default=[60])
     parser.add_argument("--kl_weight", type=list, default=[0.1])
     # parser.add_argument("--g_layers", type=list, default=[2, 3])
     # parser.add_argument("--cl_weight", type=list, default=[0, 0.01, 0.1])
     # parser.add_argument("--temp", type=list, default=[0.2, 0.4, 0.6])
     parser.add_argument("--g_layers", type=list, default=[3])
     parser.add_argument("--cl_weight", type=list, default=[0.01])
-    parser.add_argument("--temp", type=list, default=[0.2])
+    parser.add_argument("--temp", type=list, default=[0.4])
 
     args = parser.parse_args()
     set_seed(args.seed)
     logfilename = '{}-{}.log'.format(args.dataset, get_local_time())
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    log_dir = os.path.join(base_dir, "log")
-    os.makedirs(log_dir, exist_ok=True)
-    logfilepath = os.path.join(log_dir, logfilename)
+
+    logfilepath = os.path.join('log/', logfilename)
 
     file_handler = logging.FileHandler(logfilepath, mode='a', encoding='utf8')
     file_handler.setFormatter(logging.Formatter('%(levelname)s: %(message)s'))
@@ -142,7 +130,6 @@ if __name__ == "__main__":
             num_negatives=args.num_negatives,
             dataset=args.dataset,
             k=k_info,
-            seed=args.seed,
         )
         num_users, num_items, num_groups = dataset.num_users, dataset.num_items, dataset.num_groups
         logging.info(" #Users {}, #Items {}, #Groups {}\n".format(num_users, num_items, num_groups))
@@ -165,91 +152,58 @@ if __name__ == "__main__":
 
         for epoch_id in range(args.epoch):
             train_model.train()
-            g_loader = dataset.get_group_dataloader(args.batch_size, epoch=epoch_id)
-            u_loader = dataset.get_user_dataloader(args.batch_size, epoch=epoch_id)
+            g_loader = dataset.get_group_dataloader(args.batch_size)
+            u_loader = dataset.get_user_dataloader(args.batch_size)
             group_loss = training(u_loader, g_loader, epoch_id, "group", group_member_dict, group_item_dict)
 
             user_loss = training(u_loader, g_loader, epoch_id, "user", group_member_dict, group_item_dict)
 
-            group_hits, group_ndcgs = evaluate_metrics(
-                train_model,
-                dataset.group_test_ratings,
-                dataset.group_test_negatives,
-                running_device,
-                args.topK,
-                'group',
-                group_member_dict,
-                group_item_dict,
-                print_pred_score_stats=True,
-                pred_score_stats_prefix=f"[Epoch {epoch_id}] [group evaluate] [metrics]",
-                log_fn=logging.info,
-            )
-
-            logging.info(
-                "[Epoch {}] Group [metrics], Hit@{}: {}, NDCG@{}: {}".format(
-                    epoch_id, args.topK, group_hits, args.topK, group_ndcgs
+            metric_evaluators = [
+                ("metrics", evaluate_metrics),
+                ("metrics_first", evaluate_metrics_first),
+                ("metrics_last", evaluate_metrics_last),
+                ("metrics_tie_aware", evaluate_metrics_tie_aware),
+            ]
+            for metric_name, evaluator in metric_evaluators:
+                group_hits, group_ndcgs = evaluator(
+                    train_model,
+                    dataset.group_test_ratings,
+                    dataset.group_test_negatives,
+                    running_device,
+                    args.topK,
+                    'group',
+                    group_member_dict,
+                    group_item_dict,
+                    print_pred_score_stats=True,
+                    pred_score_stats_prefix=f"[Epoch {epoch_id}] [group evaluate] [{metric_name}]",
+                    log_fn=logging.info,
                 )
-            )
 
-            group_hits_after, group_ndcgs_after = evaluate_metrics_after(
-                train_model,
-                dataset.group_test_ratings,
-                dataset.group_test_negatives,
-                running_device,
-                args.topK,
-                'group',
-                group_member_dict,
-                group_item_dict,
-                print_pred_score_stats=True,
-                pred_score_stats_prefix=f"[Epoch {epoch_id}] [group evaluate] [metrics_after]",
-                log_fn=logging.info,
-            )
-
-            logging.info(
-                "[Epoch {}] Group [metrics_after], Hit@{}: {}, NDCG@{}: {}".format(
-                    epoch_id, args.topK, group_hits_after, args.topK, group_ndcgs_after
+                logging.info(
+                    "[Epoch {}] Group [{}], Hit@{}: {}, NDCG@{}: {}".format(
+                        epoch_id, metric_name, args.topK, group_hits, args.topK, group_ndcgs
+                    )
                 )
-            )
 
-            user_hits, user_ndcgs = evaluate_metrics(
-                train_model,
-                dataset.user_test_ratings,
-                dataset.user_test_negatives,
-                running_device,
-                args.topK,
-                'user',
-                group_member_dict,
-                group_item_dict,
-                print_pred_score_stats=True,
-                pred_score_stats_prefix=f"[Epoch {epoch_id}] [user evaluate] [metrics]",
-                log_fn=logging.info,
-            )
-
-            logging.info(
-                "[Epoch {}] User [metrics], Hit@{}: {}, NDCG@{}: {}".format(
-                    epoch_id, args.topK, user_hits, args.topK, user_ndcgs
+                user_hits, user_ndcgs = evaluator(
+                    train_model,
+                    dataset.user_test_ratings,
+                    dataset.user_test_negatives,
+                    running_device,
+                    args.topK,
+                    'user',
+                    group_member_dict,
+                    group_item_dict,
+                    print_pred_score_stats=True,
+                    pred_score_stats_prefix=f"[Epoch {epoch_id}] [user evaluate] [{metric_name}]",
+                    log_fn=logging.info,
                 )
-            )
 
-            user_hits_after, user_ndcgs_after = evaluate_metrics_after(
-                train_model,
-                dataset.user_test_ratings,
-                dataset.user_test_negatives,
-                running_device,
-                args.topK,
-                'user',
-                group_member_dict,
-                group_item_dict,
-                print_pred_score_stats=True,
-                pred_score_stats_prefix=f"[Epoch {epoch_id}] [user evaluate] [metrics_after]",
-                log_fn=logging.info,
-            )
-
-            logging.info(
-                "[Epoch {}] User [metrics_after], Hit@{}: {}, NDCG@{}: {}".format(
-                    epoch_id, args.topK, user_hits_after, args.topK, user_ndcgs_after
+                logging.info(
+                    "[Epoch {}] User [{}], Hit@{}: {}, NDCG@{}: {}".format(
+                        epoch_id, metric_name, args.topK, user_hits, args.topK, user_ndcgs
+                    )
                 )
-            )
 
             # tsne
             # g_rep, u_rep, i_rep = train_model.group_embedding.weight.clone(), train_model.user_embedding.weight.clone(), train_model.item_embedding.weight.clone()
