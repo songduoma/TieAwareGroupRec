@@ -179,7 +179,7 @@ class ConsRec(nn.Module):
 
         # For CAMRa2011, we use DOT mode to avoid the dead ReLU
         if self.predictor_type == "MLP":
-            return torch.sigmoid(self.predict(g_emb * i_emb))
+            return self.predict(g_emb * i_emb)
         else:
             return torch.sum(g_emb * i_emb, dim=-1)
 
@@ -187,6 +187,6 @@ class ConsRec(nn.Module):
         u_emb = self.user_embedding(user_inputs)
         i_emb = self.item_embedding(item_inputs)
         if self.predictor_type == "MLP":
-            return torch.sigmoid(self.predict(u_emb * i_emb))
+            return self.predict(u_emb * i_emb)
         else:
             return torch.sum(u_emb * i_emb, dim=-1)

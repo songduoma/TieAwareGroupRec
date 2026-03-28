@@ -116,7 +116,7 @@ class Predictor(InitModule):
         self.init_weight()
 
     def forward(self, x):
-        return torch.sigmoid(self.MLP(x).squeeze())
+        return self.MLP(x).squeeze()
 
 
 class HyperConvLayer(InitModule):

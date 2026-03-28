@@ -140,7 +140,7 @@ class ConsRec(nn.Module):
             g_emb = torch.concat([g_emb, torch.mean(self.user_embedding(torch.tensor(self.group_number_dict[i.item()]).to(item_inputs.device)), dim=0).reshape(1, -1)], dim=0)
 
     
-        return torch.sigmoid(self.predict(g_emb * i_emb))
+        return self.predict(g_emb * i_emb)
 
 
     def user_forward(self, user_inputs, item_inputs):
@@ -148,5 +148,4 @@ class ConsRec(nn.Module):
         u_emb = self.user_embedding(user_inputs)
         i_emb = self.item_embedding(item_inputs)
 
-        return torch.sigmoid(self.predict(u_emb * i_emb))
-
+        return self.predict(u_emb * i_emb)
