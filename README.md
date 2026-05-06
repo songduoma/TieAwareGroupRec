@@ -32,10 +32,10 @@ It contains all code, datasets, and archived run logs needed to reproduce the re
 
 Result folders included in this artifact:
 
-- `log_original`: archived runs used as “original” protocol side.
-- `log_revised`: archived runs used as “revised / corrected” side.
+- `log_original`: archived runs under the original evaluation/code setting.
+- `log_revised`: archived runs under the revised/corrected setting.
 - `log_tau_*`: archived temperature sweep runs for ConsRec.
-- `metrics_tie_aware_*`: archived DHMAE summary files (original vs revised, seed-wise).
+- `metrics_tie_aware_*`: archived DHMAE seed-wise tie-aware summaries.
 
 ## 3) Data
 
@@ -64,7 +64,7 @@ Main files per dataset (same naming across methods):
 
 ## 4) Installation
 
-## 4.1 Exact environment used for paper experiments
+### 4.1 Exact environment used for paper experiments
 
 ```bash
 conda create -n gr_reproducibility python=3.9.25 -y
@@ -83,7 +83,7 @@ pip install torch-geometric==2.6.1
 
 The package versions listed in this section are the ones used for the reported experiments.
 
-## 4.2 Quick sanity checks
+### 4.2 Quick sanity checks
 
 ```bash
 python -V
@@ -351,8 +351,11 @@ Switch dataset by editing `self.path` in `config.py` before `python main.py`.
 
 ## 6.3 Original vs revised model switch (for methods with additional sigmoid issue)
 
-In this repository, the revised code path (without additional sigmoid before BPR) is active by default for the following affected methods.
-To rerun “original” behavior, re-enable sigmoid at these locations:
+In this repository, the revised code path is active by default for the affected methods.
+
+Here, “revised” refers to retraining/evaluating models after removing the additional sigmoid applied to item scores before the BPR objective. It is not merely a post-hoc evaluation change.
+
+To rerun the “original” behavior, re-enable the sigmoid at these locations:
 
 - `AlignGroup/model.py`
 - `WWW2023ConsRec/model.py`
