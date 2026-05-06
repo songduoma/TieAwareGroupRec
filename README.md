@@ -30,12 +30,13 @@ It contains all code, datasets, and archived run logs needed to reproduce the re
 - `DGGVAE/`: DGGVAE (TOIS 2026).
 - `Baseline/`: AGREE, GroupIM, HCR, HyperGroup, HHGR, CubeRec.
 
-Result folders included in this artifact:
+Result artifacts included in this artifact:
 
 - `log_original`: archived runs under the original evaluation/code setting.
 - `log_revised`: archived runs under the revised/corrected setting.
 - `log_tau_*`: archived temperature sweep runs for ConsRec.
-- `metrics_tie_aware_*`: archived DHMAE seed-wise tie-aware summaries.
+- `output_*_{original,revised}_seed*.log`: archived ITR per-seed stdout logs.
+- `metrics_tie_aware_*`: archived DHMAE per-seed tie-aware summaries.
 
 ## 3) Data
 
@@ -198,7 +199,6 @@ for s in 0 1 2; do
 done
 
 # CAMRa2011 (temp=[0.8])
-# set default temp in main.py to [0.8] before running CAMRa2011.
 for s in 0 1 2; do
   python -u main.py --dataset=CAMRa2011 --device=cuda:0 --seed=$s
 done
