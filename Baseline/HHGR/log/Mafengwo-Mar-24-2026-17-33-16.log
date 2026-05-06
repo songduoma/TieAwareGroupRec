@@ -1,0 +1,51 @@
+INFO: = = = = = = = = = = = = = = = = = = = = 
+INFO: ## Starting Time: 2026-03-24 17:33:16
+INFO: Namespace(dataset='Mafengwo', lr=0.005, wd=0.0, lambda_mi=1.0, drop_ratio=0.4, batch_size=512, epoch=5, group_epoch=1, device='cuda:0', emb_dim=64, num_negatives=10, seed=1111)
+INFO: Pre-Training on user-item interactions...
+INFO: [Epoch 0] time 4.49s, loss 0.5490
+INFO: [Epoch 1] time 3.54s, loss 0.1779
+INFO: [Epoch 2] time 3.53s, loss 0.1272
+INFO: [Epoch 3] time 3.50s, loss 0.0901
+INFO: [Epoch 4] time 3.52s, loss 0.0694
+INFO: Pre-Training finish!
+
+INFO: Training on user-level self-supervised...
+INFO: [Epoch 0] time 0.29s, loss 1.3836
+INFO: [Epoch 1] time 0.05s, loss 1.3687
+INFO: [Epoch 2] time 0.05s, loss 1.3309
+INFO: [Epoch 3] time 0.05s, loss 1.2550
+INFO: [Epoch 4] time 0.05s, loss 1.1330
+INFO: Training on user-level finish!
+
+INFO: Training on group-level hypergraph learning...
+INFO: batch 0, 2026-03-24 17:33:45
+INFO: [Epoch 0] time 55.27s, loss 5451442.8775
+INFO: Training on group-level finish!
+
+INFO: [Evaluate] [user evaluate] [metrics] pred_score max: 1.093657, num of top-score tie (avg per sample): 1.0410
+INFO: [Evaluate] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0307%, samples with tied top (>1 item): 3.9909%
+INFO: [Evaluate] User [metrics] Hit@[1, 5, 10] [0.24971, 0.67617, 0.79761], NDCG@[1, 5, 10] [0.24971, 0.47811, 0.51762]
+INFO: [Evaluate] [group evaluate] [metrics] pred_score max: 21093.052734, num of top-score tie (avg per sample): 1.0191
+INFO: [Evaluate] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0090%, samples with tied top (>1 item): 1.8090%
+INFO: [Evaluate] Group [metrics] Hit@[1, 5, 10] [0.0191, 0.06432, 0.10854], NDCG@[1, 5, 10] [0.0191, 0.04224, 0.05616]
+INFO: [Evaluate] [user evaluate] [metrics_first] pred_score max: 1.093657, num of top-score tie (avg per sample): 1.0410
+INFO: [Evaluate] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0307%, samples with tied top (>1 item): 3.9909%
+INFO: [Evaluate] User [metrics_first] Hit@[1, 5, 10] [0.24971, 0.67959, 0.80217], NDCG@[1, 5, 10] [0.24971, 0.48001, 0.51988]
+INFO: [Evaluate] [group evaluate] [metrics_first] pred_score max: 21093.052734, num of top-score tie (avg per sample): 1.0191
+INFO: [Evaluate] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0090%, samples with tied top (>1 item): 1.8090%
+INFO: [Evaluate] Group [metrics_first] Hit@[1, 5, 10] [0.0191, 0.06432, 0.10955], NDCG@[1, 5, 10] [0.0191, 0.04224, 0.05645]
+INFO: [Evaluate] [user evaluate] [metrics_last] pred_score max: 1.093657, num of top-score tie (avg per sample): 1.0410
+INFO: [Evaluate] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0307%, samples with tied top (>1 item): 3.9909%
+INFO: [Evaluate] User [metrics_last] Hit@[1, 5, 10] [0.22349, 0.67104, 0.7919], NDCG@[1, 5, 10] [0.22349, 0.46259, 0.50192]
+INFO: [Evaluate] [group evaluate] [metrics_last] pred_score max: 21093.052734, num of top-score tie (avg per sample): 1.0191
+INFO: [Evaluate] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0090%, samples with tied top (>1 item): 1.8090%
+INFO: [Evaluate] Group [metrics_last] Hit@[1, 5, 10] [0.01809, 0.06432, 0.10754], NDCG@[1, 5, 10] [0.01809, 0.04187, 0.0555]
+INFO: [Evaluate] [user evaluate] [metrics_tie_aware] pred_score max: 1.093657, num of top-score tie (avg per sample): 1.0410
+INFO: [Evaluate] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0307%, samples with tied top (>1 item): 3.9909%
+INFO: [Evaluate] User [metrics_tie_aware] Hit@[1, 5, 10] [0.2366, 0.67531, 0.79694], NDCG@[1, 5, 10] [0.2366, 0.47129, 0.51087]
+INFO: [Evaluate] [group evaluate] [metrics_tie_aware] pred_score max: 21093.052734, num of top-score tie (avg per sample): 1.0191
+INFO: [Evaluate] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0090%, samples with tied top (>1 item): 1.8090%
+INFO: [Evaluate] Group [metrics_tie_aware] Hit@[1, 5, 10] [0.01859, 0.06432, 0.10854], NDCG@[1, 5, 10] [0.01859, 0.04206, 0.05598]
+INFO: ## Finishing Time: 2026-03-24 17:39:05
+INFO: = = = = = = = = = = = = = = = = = = = = 
+INFO: Done!

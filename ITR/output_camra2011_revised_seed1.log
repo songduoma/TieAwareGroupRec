@@ -1,0 +1,47 @@
+= = = = = = = = = = = = = = = = = = = = 
+## Starting Time: 2026-05-03 01:08:36
+Namespace(seed=1, dataset='CAMRa2011', device='cuda:0', layers=2, emb_dim=32, num_negatives=2, cluster=10, g2i=10, topK=[1, 5, 10], epoch=30, learning_rate=0.001, batch_size=512, patience=4, predictor='DOT', loss_type='BPR')
+[CAMRA2011] loading...
+UserItem: (602, 7710) with 111845 interactions, sparsity: 0.97590
+GroupItem: (290, 7710) with 112659 interactions, sparsity: 0.94961
+/home/guest/r14944001/projects/reproducibility/ITR/dataloader.py:208: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:651.)
+  return torch.sparse.FloatTensor(index, data, torch.Size(coo.shape))
+/home/guest/r14944001/projects/reproducibility/ITR/dataloader.py:190: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  user_hyper_graph = torch.sparse.mm(convert_sp_mat_to_sp_tensor(user_hg_deg),
+User hyper-graph torch.Size([290, 602]), Item hyper-graph torch.Size([290, 7710]), Full hyper-graph torch.Size([8312, 290])
+/home/guest/r14944001/projects/reproducibility/ITR/dataloader.py:222: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(row_sum, -0.5).flatten()
+[0;30;43mCAMRA2011 finish loading![0m #Users 602, #Items 7710, #Groups 290
+
+Epoch 9, user loss: 0.08899, Cost time: 1.39s
+Epoch 19, user loss: 0.06933, Cost time: 1.52s
+Epoch 29, user loss: 0.06059, Cost time: 1.50s
+[Epoch 30] [group evaluate] [metrics] pred_score max: 8.799379, num of top-score tie (avg per sample): 1.0048
+[Epoch 30] [group evaluate] [metrics] top-score tie ratio (avg per sample): 0.9949%, samples with tied top (>1 item): 0.4828%
+[Epoch 30] Group [metrics], Hit@[1, 5, 10]: [0.20138, 0.62069, 0.81172], NDCG@[1, 5, 10]: [0.20138, 0.4138, 0.47621]
+[Epoch 30] [user evaluate] [metrics] pred_score max: 10.785272, num of top-score tie (avg per sample): 1.0040
+[Epoch 30] [user evaluate] [metrics] top-score tie ratio (avg per sample): 0.9940%, samples with tied top (>1 item): 0.3987%
+[Epoch 30] User [metrics], Hit@[1, 5, 10]: [0.20133, 0.64784, 0.82757], NDCG@[1, 5, 10]: [0.20133, 0.43204, 0.49061]
+[Epoch 30] [group evaluate] [metrics_first] pred_score max: 8.799379, num of top-score tie (avg per sample): 1.0048
+[Epoch 30] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 0.9949%, samples with tied top (>1 item): 0.4828%
+[Epoch 30] Group [metrics_first], Hit@[1, 5, 10]: [0.20138, 0.62069, 0.81241], NDCG@[1, 5, 10]: [0.20138, 0.41389, 0.47654]
+[Epoch 30] [user evaluate] [metrics_first] pred_score max: 10.785272, num of top-score tie (avg per sample): 1.0040
+[Epoch 30] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 0.9940%, samples with tied top (>1 item): 0.3987%
+[Epoch 30] User [metrics_first], Hit@[1, 5, 10]: [0.20133, 0.64784, 0.82757], NDCG@[1, 5, 10]: [0.20133, 0.43207, 0.49067]
+[Epoch 30] [group evaluate] [metrics_last] pred_score max: 8.799379, num of top-score tie (avg per sample): 1.0048
+[Epoch 30] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 0.9949%, samples with tied top (>1 item): 0.4828%
+[Epoch 30] Group [metrics_last], Hit@[1, 5, 10]: [0.19655, 0.62, 0.81172], NDCG@[1, 5, 10]: [0.19655, 0.41127, 0.47391]
+[Epoch 30] [user evaluate] [metrics_last] pred_score max: 10.785272, num of top-score tie (avg per sample): 1.0040
+[Epoch 30] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 0.9940%, samples with tied top (>1 item): 0.3987%
+[Epoch 30] User [metrics_last], Hit@[1, 5, 10]: [0.19734, 0.64718, 0.82757], NDCG@[1, 5, 10]: [0.19734, 0.42997, 0.48876]
+[Epoch 30] [group evaluate] [metrics_tie_aware] pred_score max: 8.799379, num of top-score tie (avg per sample): 1.0048
+[Epoch 30] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 0.9949%, samples with tied top (>1 item): 0.4828%
+[Epoch 30] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.19897, 0.62034, 0.81207], NDCG@[1, 5, 10]: [0.19897, 0.41258, 0.47522]
+[Epoch 30] [user evaluate] [metrics_tie_aware] pred_score max: 10.785272, num of top-score tie (avg per sample): 1.0040
+[Epoch 30] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 0.9940%, samples with tied top (>1 item): 0.3987%
+[Epoch 30] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.19934, 0.64751, 0.82757], NDCG@[1, 5, 10]: [0.19934, 0.43102, 0.48972]
+
+
+## Finishing Time: 2026-05-03 01:11:15
+= = = = = = = = = = = = = = = = = = = = 
+Done!

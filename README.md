@@ -9,7 +9,7 @@ It contains all code, datasets, and archived run logs needed to reproduce the re
 - evaluation inflation under deterministic tie-breaking,
 - tie-aware evaluation and tie statistics,
 - removing additional sigmoid,
-- temperature-scaled BPR (\(\tau\)-BPR) mitigation.
+- temperature-scaled BPR (τ-BPR) mitigation.
 
 ## 1) Artifact Checklist (Track Requirement Mapping)
 
@@ -23,7 +23,7 @@ It contains all code, datasets, and archived run logs needed to reproduce the re
 
 ## 2) Repository Structure
 
-- `WWW2023ConsRec/`: ConsRec (WWW 2023), plus \(\tau\)-BPR experiments.
+- `WWW2023ConsRec/`: ConsRec (WWW 2023), plus τ-BPR experiments.
 - `AlignGroup/`: AlignGroup (CIKM 2024).
 - `DHMAE/`: DHMAE (SIGIR 2024).
 - `ITR/`: ITR (NeurIPS 2024).
@@ -387,7 +387,7 @@ Archived sweep logs are in `WWW2023ConsRec/log_tau_*`.
 - **Inflation under original protocol (Table 3):** compare `print.py` vs `print_aware.py` on `log_original` (or `output_*_original_*` / DHMAE original txt).
 - **Tie size vs drop correlation (Table 4, Figure 1):** use `metrics_tie_aware` log lines (`num of top-score tie`, `top-score tie ratio`, `samples with tied top`).
 - **Removing sigmoid / corrected comparison (Table 5):** evaluate `log_revised` (or equivalent revised outputs).
-- **\(\tau\)-BPR mitigation (Table 6, Figure 2):** use `WWW2023ConsRec/log_tau_*` or rerun Section 6.4.
+- **τ-BPR mitigation (Table 6, Figure 2):** use `WWW2023ConsRec/log_tau_*` or rerun Section 6.4.
 
 ## 7) Expected Output Format
 

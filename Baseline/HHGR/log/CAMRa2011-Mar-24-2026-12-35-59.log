@@ -1,0 +1,73 @@
+INFO: = = = = = = = = = = = = = = = = = = = = 
+INFO: ## Starting Time: 2026-03-24 12:35:59
+INFO: Namespace(dataset='CAMRa2011', lr=0.005, wd=0.0, lambda_mi=1.0, drop_ratio=0.4, batch_size=512, epoch=5, group_epoch=1, device='cuda:0', emb_dim=64, num_negatives=10, seed=1111)
+INFO: Pre-Training on user-item interactions...
+INFO: [Epoch 0] time 10.15s, loss 0.3955
+INFO: [Epoch 1] time 9.89s, loss 0.1407
+INFO: [Epoch 2] time 9.80s, loss 0.1000
+INFO: [Epoch 3] time 9.72s, loss 0.0822
+INFO: [Epoch 4] time 9.97s, loss 0.0722
+INFO: Pre-Training finish!
+
+INFO: Training on user-level self-supervised...
+INFO: [Epoch 0] time 0.12s, loss 1.3859
+INFO: [Epoch 1] time 0.01s, loss 1.3840
+INFO: [Epoch 2] time 0.01s, loss 1.3825
+INFO: [Epoch 3] time 0.01s, loss 1.3798
+INFO: [Epoch 4] time 0.01s, loss 1.3755
+INFO: Training on user-level finish!
+
+INFO: Training on group-level hypergraph learning...
+INFO: batch 0, 2026-03-24 12:36:56
+INFO: batch 100, 2026-03-24 12:38:37
+INFO: batch 200, 2026-03-24 12:40:15
+INFO: batch 300, 2026-03-24 12:41:53
+INFO: batch 400, 2026-03-24 12:43:32
+INFO: batch 500, 2026-03-24 12:45:11
+INFO: batch 600, 2026-03-24 12:46:51
+INFO: batch 700, 2026-03-24 12:48:32
+INFO: batch 800, 2026-03-24 12:50:14
+INFO: batch 900, 2026-03-24 12:51:53
+INFO: batch 1000, 2026-03-24 12:53:32
+INFO: batch 1100, 2026-03-24 12:55:10
+INFO: batch 1200, 2026-03-24 12:56:51
+INFO: batch 1300, 2026-03-24 12:58:30
+INFO: batch 1400, 2026-03-24 13:00:08
+INFO: batch 1500, 2026-03-24 13:01:48
+INFO: batch 1600, 2026-03-24 13:03:28
+INFO: batch 1700, 2026-03-24 13:05:07
+INFO: batch 1800, 2026-03-24 13:06:45
+INFO: batch 1900, 2026-03-24 13:08:23
+INFO: batch 2000, 2026-03-24 13:10:01
+INFO: batch 2100, 2026-03-24 13:11:39
+INFO: batch 2200, 2026-03-24 13:13:18
+INFO: [Epoch 0] time 2186.45s, loss 0.1270
+INFO: Training on group-level finish!
+
+INFO: [Evaluate] [user evaluate] [metrics] pred_score max: 1.382095, num of top-score tie (avg per sample): 1.0010
+INFO: [Evaluate] [user evaluate] [metrics] top-score tie ratio (avg per sample): 0.9911%, samples with tied top (>1 item): 0.0997%
+INFO: [Evaluate] User [metrics] Hit@[1, 5, 10] [0.17409, 0.63754, 0.82392], NDCG@[1, 5, 10] [0.17409, 0.41058, 0.47182]
+INFO: [Evaluate] [group evaluate] [metrics] pred_score max: 1.230326, num of top-score tie (avg per sample): 1.0021
+INFO: [Evaluate] [group evaluate] [metrics] top-score tie ratio (avg per sample): 0.9921%, samples with tied top (>1 item): 0.2069%
+INFO: [Evaluate] Group [metrics] Hit@[1, 5, 10] [0.16, 0.6131, 0.81517], NDCG@[1, 5, 10] [0.16, 0.38822, 0.45473]
+INFO: [Evaluate] [user evaluate] [metrics_first] pred_score max: 1.382095, num of top-score tie (avg per sample): 1.0010
+INFO: [Evaluate] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 0.9911%, samples with tied top (>1 item): 0.0997%
+INFO: [Evaluate] User [metrics_first] Hit@[1, 5, 10] [0.17409, 0.63787, 0.82392], NDCG@[1, 5, 10] [0.17409, 0.41073, 0.47187]
+INFO: [Evaluate] [group evaluate] [metrics_first] pred_score max: 1.230326, num of top-score tie (avg per sample): 1.0021
+INFO: [Evaluate] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 0.9921%, samples with tied top (>1 item): 0.2069%
+INFO: [Evaluate] Group [metrics_first] Hit@[1, 5, 10] [0.16, 0.6131, 0.81586], NDCG@[1, 5, 10] [0.16, 0.38822, 0.45494]
+INFO: [Evaluate] [user evaluate] [metrics_last] pred_score max: 1.382095, num of top-score tie (avg per sample): 1.0010
+INFO: [Evaluate] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 0.9911%, samples with tied top (>1 item): 0.0997%
+INFO: [Evaluate] User [metrics_last] Hit@[1, 5, 10] [0.17309, 0.63688, 0.82326], NDCG@[1, 5, 10] [0.17309, 0.40939, 0.47063]
+INFO: [Evaluate] [group evaluate] [metrics_last] pred_score max: 1.230326, num of top-score tie (avg per sample): 1.0021
+INFO: [Evaluate] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 0.9921%, samples with tied top (>1 item): 0.2069%
+INFO: [Evaluate] Group [metrics_last] Hit@[1, 5, 10] [0.15793, 0.61241, 0.81448], NDCG@[1, 5, 10] [0.15793, 0.38639, 0.45293]
+INFO: [Evaluate] [user evaluate] [metrics_tie_aware] pred_score max: 1.382095, num of top-score tie (avg per sample): 1.0010
+INFO: [Evaluate] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 0.9911%, samples with tied top (>1 item): 0.0997%
+INFO: [Evaluate] User [metrics_tie_aware] Hit@[1, 5, 10] [0.17359, 0.63738, 0.82359], NDCG@[1, 5, 10] [0.17359, 0.41006, 0.47125]
+INFO: [Evaluate] [group evaluate] [metrics_tie_aware] pred_score max: 1.230326, num of top-score tie (avg per sample): 1.0021
+INFO: [Evaluate] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 0.9921%, samples with tied top (>1 item): 0.2069%
+INFO: [Evaluate] Group [metrics_tie_aware] Hit@[1, 5, 10] [0.15897, 0.61276, 0.81517], NDCG@[1, 5, 10] [0.15897, 0.3873, 0.45393]
+INFO: ## Finishing Time: 2026-03-24 13:19:15
+INFO: = = = = = = = = = = = = = = = = = = = = 
+INFO: Done!

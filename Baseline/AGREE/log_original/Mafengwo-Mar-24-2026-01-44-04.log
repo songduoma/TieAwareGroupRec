@@ -1,0 +1,817 @@
+INFO: = = = = = = = = = = = = = = = = = = = = 
+INFO: ## Starting Time: 2026-03-24 01:44:04
+INFO: Namespace(dataset='Mafengwo', seed=0, device='cuda:0', emb_dim=32, epoch=30, batch_size=256, drop_ratio=0.2, lr=0.001, topK=[1, 5, 10], num_negatives=4)
+INFO: [Epoch 0] user loss: 0.25371
+INFO: [Epoch 0] group loss: 0.87065
+INFO: [Epoch 0] [user evaluate] [metrics] pred_score max: 0.999968, num of top-score tie (avg per sample): 1.0359
+INFO: [Epoch 0] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0257%, samples with tied top (>1 item): 3.5918%
+INFO: [Epoch 0] User [metrics], Hit@[1, 5, 10]: [0.2138, 0.59407, 0.70981], NDCG@[1, 5, 10]: [0.2138, 0.41479, 0.45237]
+INFO: [Epoch 0] [group evaluate] [metrics] pred_score max: 0.999965, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 0] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.2111%
+INFO: [Epoch 0] Group [metrics], Hit@[1, 5, 10]: [0.01809, 0.2603, 0.43015], NDCG@[1, 5, 10]: [0.01809, 0.13377, 0.18941]
+INFO: [Epoch 0] [user evaluate] [metrics_first] pred_score max: 0.999968, num of top-score tie (avg per sample): 1.0359
+INFO: [Epoch 0] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0257%, samples with tied top (>1 item): 3.5918%
+INFO: [Epoch 0] User [metrics_first], Hit@[1, 5, 10]: [0.2138, 0.59806, 0.7138], NDCG@[1, 5, 10]: [0.2138, 0.41749, 0.455]
+INFO: [Epoch 0] [group evaluate] [metrics_first] pred_score max: 0.999965, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 0] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.2111%
+INFO: [Epoch 0] Group [metrics_first], Hit@[1, 5, 10]: [0.01809, 0.26231, 0.43015], NDCG@[1, 5, 10]: [0.01809, 0.13459, 0.18953]
+INFO: [Epoch 0] [user evaluate] [metrics_last] pred_score max: 0.999968, num of top-score tie (avg per sample): 1.0359
+INFO: [Epoch 0] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0257%, samples with tied top (>1 item): 3.5918%
+INFO: [Epoch 0] User [metrics_last], Hit@[1, 5, 10]: [0.19441, 0.58666, 0.70753], NDCG@[1, 5, 10]: [0.19441, 0.40164, 0.44092]
+INFO: [Epoch 0] [group evaluate] [metrics_last] pred_score max: 0.999965, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 0] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.2111%
+INFO: [Epoch 0] Group [metrics_last], Hit@[1, 5, 10]: [0.01809, 0.2593, 0.42915], NDCG@[1, 5, 10]: [0.01809, 0.13277, 0.18836]
+INFO: [Epoch 0] [user evaluate] [metrics_tie_aware] pred_score max: 0.999968, num of top-score tie (avg per sample): 1.0359
+INFO: [Epoch 0] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0257%, samples with tied top (>1 item): 3.5918%
+INFO: [Epoch 0] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.2041, 0.59236, 0.71076], NDCG@[1, 5, 10]: [0.2041, 0.40956, 0.44799]
+INFO: [Epoch 0] [group evaluate] [metrics_tie_aware] pred_score max: 0.999965, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 0] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.2111%
+INFO: [Epoch 0] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.01809, 0.2608, 0.42965], NDCG@[1, 5, 10]: [0.01809, 0.13368, 0.18895]
+INFO: 
+INFO: [Epoch 1] user loss: 0.20440
+INFO: [Epoch 1] group loss: 0.69389
+INFO: [Epoch 1] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0359
+INFO: [Epoch 1] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0257%, samples with tied top (>1 item): 3.5918%
+INFO: [Epoch 1] User [metrics], Hit@[1, 5, 10]: [0.21836, 0.61231, 0.72976], NDCG@[1, 5, 10]: [0.21836, 0.42689, 0.46506]
+INFO: [Epoch 1] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 1] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.2111%
+INFO: [Epoch 1] Group [metrics], Hit@[1, 5, 10]: [0.05126, 0.3799, 0.53568], NDCG@[1, 5, 10]: [0.05126, 0.21329, 0.2641]
+INFO: [Epoch 1] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0359
+INFO: [Epoch 1] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0257%, samples with tied top (>1 item): 3.5918%
+INFO: [Epoch 1] User [metrics_first], Hit@[1, 5, 10]: [0.21836, 0.61288, 0.73261], NDCG@[1, 5, 10]: [0.21836, 0.42765, 0.46664]
+INFO: [Epoch 1] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 1] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.2111%
+INFO: [Epoch 1] Group [metrics_first], Hit@[1, 5, 10]: [0.05126, 0.3799, 0.53568], NDCG@[1, 5, 10]: [0.05126, 0.21342, 0.26424]
+INFO: [Epoch 1] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0359
+INFO: [Epoch 1] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0257%, samples with tied top (>1 item): 3.5918%
+INFO: [Epoch 1] User [metrics_last], Hit@[1, 5, 10]: [0.19897, 0.60547, 0.72634], NDCG@[1, 5, 10]: [0.19897, 0.41306, 0.45236]
+INFO: [Epoch 1] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 1] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.2111%
+INFO: [Epoch 1] Group [metrics_last], Hit@[1, 5, 10]: [0.04824, 0.37688, 0.53467], NDCG@[1, 5, 10]: [0.04824, 0.21035, 0.26182]
+INFO: [Epoch 1] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0359
+INFO: [Epoch 1] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0257%, samples with tied top (>1 item): 3.5918%
+INFO: [Epoch 1] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.20867, 0.60927, 0.72957], NDCG@[1, 5, 10]: [0.20867, 0.42038, 0.45951]
+INFO: [Epoch 1] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 1] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.2111%
+INFO: [Epoch 1] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.04975, 0.37839, 0.53518], NDCG@[1, 5, 10]: [0.04975, 0.21188, 0.26303]
+INFO: 
+INFO: [Epoch 2] user loss: 0.18542
+INFO: [Epoch 2] group loss: 0.50296
+INFO: [Epoch 2] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0929
+INFO: [Epoch 2] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0821%, samples with tied top (>1 item): 7.7537%
+INFO: [Epoch 2] User [metrics], Hit@[1, 5, 10]: [0.23546, 0.61745, 0.74059], NDCG@[1, 5, 10]: [0.23546, 0.4365, 0.47659]
+INFO: [Epoch 2] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0221
+INFO: [Epoch 2] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0120%, samples with tied top (>1 item): 2.0101%
+INFO: [Epoch 2] Group [metrics], Hit@[1, 5, 10]: [0.09246, 0.42412, 0.57889], NDCG@[1, 5, 10]: [0.09246, 0.25863, 0.30957]
+INFO: [Epoch 2] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0929
+INFO: [Epoch 2] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0821%, samples with tied top (>1 item): 7.7537%
+INFO: [Epoch 2] User [metrics_first], Hit@[1, 5, 10]: [0.23546, 0.61973, 0.74344], NDCG@[1, 5, 10]: [0.23546, 0.43788, 0.47812]
+INFO: [Epoch 2] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0221
+INFO: [Epoch 2] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0120%, samples with tied top (>1 item): 2.0101%
+INFO: [Epoch 2] Group [metrics_first], Hit@[1, 5, 10]: [0.09246, 0.42513, 0.57889], NDCG@[1, 5, 10]: [0.09246, 0.25902, 0.30964]
+INFO: [Epoch 2] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0929
+INFO: [Epoch 2] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0821%, samples with tied top (>1 item): 7.7537%
+INFO: [Epoch 2] User [metrics_last], Hit@[1, 5, 10]: [0.20696, 0.60718, 0.73717], NDCG@[1, 5, 10]: [0.20696, 0.41775, 0.46014]
+INFO: [Epoch 2] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0221
+INFO: [Epoch 2] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0120%, samples with tied top (>1 item): 2.0101%
+INFO: [Epoch 2] Group [metrics_last], Hit@[1, 5, 10]: [0.08744, 0.42211, 0.57889], NDCG@[1, 5, 10]: [0.08744, 0.25527, 0.30685]
+INFO: [Epoch 2] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0929
+INFO: [Epoch 2] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0821%, samples with tied top (>1 item): 7.7537%
+INFO: [Epoch 2] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.22073, 0.61345, 0.74031], NDCG@[1, 5, 10]: [0.22073, 0.42769, 0.46901]
+INFO: [Epoch 2] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0221
+INFO: [Epoch 2] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0120%, samples with tied top (>1 item): 2.0101%
+INFO: [Epoch 2] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.08995, 0.42362, 0.57889], NDCG@[1, 5, 10]: [0.08995, 0.25714, 0.30825]
+INFO: 
+INFO: [Epoch 3] user loss: 0.17156
+INFO: [Epoch 3] group loss: 0.43097
+INFO: [Epoch 3] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1813
+INFO: [Epoch 3] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.1696%, samples with tied top (>1 item): 12.1437%
+INFO: [Epoch 3] User [metrics], Hit@[1, 5, 10]: [0.23945, 0.61231, 0.7423], NDCG@[1, 5, 10]: [0.23945, 0.43721, 0.47968]
+INFO: [Epoch 3] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0201
+INFO: [Epoch 3] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0100%, samples with tied top (>1 item): 1.9095%
+INFO: [Epoch 3] Group [metrics], Hit@[1, 5, 10]: [0.11558, 0.44322, 0.61206], NDCG@[1, 5, 10]: [0.11558, 0.28187, 0.33689]
+INFO: [Epoch 3] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1813
+INFO: [Epoch 3] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.1696%, samples with tied top (>1 item): 12.1437%
+INFO: [Epoch 3] User [metrics_first], Hit@[1, 5, 10]: [0.23945, 0.61574, 0.74572], NDCG@[1, 5, 10]: [0.23945, 0.43918, 0.48166]
+INFO: [Epoch 3] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0201
+INFO: [Epoch 3] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0100%, samples with tied top (>1 item): 1.9095%
+INFO: [Epoch 3] Group [metrics_first], Hit@[1, 5, 10]: [0.11558, 0.44322, 0.61206], NDCG@[1, 5, 10]: [0.11558, 0.28191, 0.33697]
+INFO: [Epoch 3] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1813
+INFO: [Epoch 3] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.1696%, samples with tied top (>1 item): 12.1437%
+INFO: [Epoch 3] User [metrics_last], Hit@[1, 5, 10]: [0.20867, 0.60547, 0.73945], NDCG@[1, 5, 10]: [0.20867, 0.41812, 0.46183]
+INFO: [Epoch 3] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0201
+INFO: [Epoch 3] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0100%, samples with tied top (>1 item): 1.9095%
+INFO: [Epoch 3] Group [metrics_last], Hit@[1, 5, 10]: [0.10955, 0.44322, 0.61206], NDCG@[1, 5, 10]: [0.10955, 0.27897, 0.33395]
+INFO: [Epoch 3] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1813
+INFO: [Epoch 3] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.1696%, samples with tied top (>1 item): 12.1437%
+INFO: [Epoch 3] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.2233, 0.61128, 0.74259], NDCG@[1, 5, 10]: [0.2233, 0.4286, 0.47148]
+INFO: [Epoch 3] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0201
+INFO: [Epoch 3] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0100%, samples with tied top (>1 item): 1.9095%
+INFO: [Epoch 3] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.11256, 0.44322, 0.61206], NDCG@[1, 5, 10]: [0.11256, 0.28044, 0.33546]
+INFO: 
+INFO: [Epoch 4] user loss: 0.15928
+INFO: [Epoch 4] group loss: 0.37535
+INFO: [Epoch 4] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1745
+INFO: [Epoch 4] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.1628%, samples with tied top (>1 item): 11.9156%
+INFO: [Epoch 4] User [metrics], Hit@[1, 5, 10]: [0.25029, 0.63683, 0.75713], NDCG@[1, 5, 10]: [0.25029, 0.45244, 0.49128]
+INFO: [Epoch 4] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 4] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.3116%
+INFO: [Epoch 4] Group [metrics], Hit@[1, 5, 10]: [0.17588, 0.47638, 0.62211], NDCG@[1, 5, 10]: [0.17588, 0.32962, 0.37747]
+INFO: [Epoch 4] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1745
+INFO: [Epoch 4] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.1628%, samples with tied top (>1 item): 11.9156%
+INFO: [Epoch 4] User [metrics_first], Hit@[1, 5, 10]: [0.25029, 0.63797, 0.75941], NDCG@[1, 5, 10]: [0.25029, 0.45357, 0.49286]
+INFO: [Epoch 4] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 4] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.3116%
+INFO: [Epoch 4] Group [metrics_first], Hit@[1, 5, 10]: [0.17588, 0.47638, 0.62211], NDCG@[1, 5, 10]: [0.17588, 0.32962, 0.37748]
+INFO: [Epoch 4] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1745
+INFO: [Epoch 4] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.1628%, samples with tied top (>1 item): 11.9156%
+INFO: [Epoch 4] User [metrics_last], Hit@[1, 5, 10]: [0.21779, 0.62942, 0.75314], NDCG@[1, 5, 10]: [0.21779, 0.43231, 0.47231]
+INFO: [Epoch 4] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 4] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.3116%
+INFO: [Epoch 4] Group [metrics_last], Hit@[1, 5, 10]: [0.16784, 0.47437, 0.62211], NDCG@[1, 5, 10]: [0.16784, 0.32529, 0.3738]
+INFO: [Epoch 4] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1745
+INFO: [Epoch 4] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.1628%, samples with tied top (>1 item): 11.9156%
+INFO: [Epoch 4] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.23287, 0.63388, 0.75641], NDCG@[1, 5, 10]: [0.23287, 0.44263, 0.48226]
+INFO: [Epoch 4] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 4] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.3116%
+INFO: [Epoch 4] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.17186, 0.47538, 0.62211], NDCG@[1, 5, 10]: [0.17186, 0.32745, 0.37564]
+INFO: 
+INFO: [Epoch 5] user loss: 0.14949
+INFO: [Epoch 5] group loss: 0.33935
+INFO: [Epoch 5] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.3227
+INFO: [Epoch 5] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.3096%, samples with tied top (>1 item): 17.0468%
+INFO: [Epoch 5] User [metrics], Hit@[1, 5, 10]: [0.25314, 0.64424, 0.74914], NDCG@[1, 5, 10]: [0.25314, 0.45747, 0.49157]
+INFO: [Epoch 5] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0261
+INFO: [Epoch 5] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0160%, samples with tied top (>1 item): 2.5126%
+INFO: [Epoch 5] Group [metrics], Hit@[1, 5, 10]: [0.16985, 0.48241, 0.63719], NDCG@[1, 5, 10]: [0.16985, 0.33289, 0.38341]
+INFO: [Epoch 5] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.3227
+INFO: [Epoch 5] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.3096%, samples with tied top (>1 item): 17.0468%
+INFO: [Epoch 5] User [metrics_first], Hit@[1, 5, 10]: [0.25314, 0.64766, 0.752], NDCG@[1, 5, 10]: [0.25314, 0.45944, 0.4933]
+INFO: [Epoch 5] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0261
+INFO: [Epoch 5] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0160%, samples with tied top (>1 item): 2.5126%
+INFO: [Epoch 5] Group [metrics_first], Hit@[1, 5, 10]: [0.16985, 0.48241, 0.63719], NDCG@[1, 5, 10]: [0.16985, 0.33289, 0.38344]
+INFO: [Epoch 5] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.3227
+INFO: [Epoch 5] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.3096%, samples with tied top (>1 item): 17.0468%
+INFO: [Epoch 5] User [metrics_last], Hit@[1, 5, 10]: [0.21038, 0.62885, 0.74515], NDCG@[1, 5, 10]: [0.21038, 0.4291, 0.46723]
+INFO: [Epoch 5] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0261
+INFO: [Epoch 5] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0160%, samples with tied top (>1 item): 2.5126%
+INFO: [Epoch 5] Group [metrics_last], Hit@[1, 5, 10]: [0.16382, 0.4804, 0.63719], NDCG@[1, 5, 10]: [0.16382, 0.32912, 0.3803]
+INFO: [Epoch 5] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.3227
+INFO: [Epoch 5] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.3096%, samples with tied top (>1 item): 17.0468%
+INFO: [Epoch 5] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.22835, 0.63923, 0.74848], NDCG@[1, 5, 10]: [0.22835, 0.44352, 0.47915]
+INFO: [Epoch 5] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0261
+INFO: [Epoch 5] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0160%, samples with tied top (>1 item): 2.5126%
+INFO: [Epoch 5] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.16683, 0.48141, 0.63719], NDCG@[1, 5, 10]: [0.16683, 0.33101, 0.38187]
+INFO: 
+INFO: [Epoch 6] user loss: 0.13913
+INFO: [Epoch 6] group loss: 0.31931
+INFO: [Epoch 6] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.4544
+INFO: [Epoch 6] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.4400%, samples with tied top (>1 item): 21.2087%
+INFO: [Epoch 6] User [metrics], Hit@[1, 5, 10]: [0.26397, 0.63569, 0.7577], NDCG@[1, 5, 10]: [0.26397, 0.45843, 0.49831]
+INFO: [Epoch 6] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0392
+INFO: [Epoch 6] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0289%, samples with tied top (>1 item): 3.6181%
+INFO: [Epoch 6] Group [metrics], Hit@[1, 5, 10]: [0.18693, 0.50854, 0.64824], NDCG@[1, 5, 10]: [0.18693, 0.35258, 0.39842]
+INFO: [Epoch 6] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.4544
+INFO: [Epoch 6] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.4400%, samples with tied top (>1 item): 21.2087%
+INFO: [Epoch 6] User [metrics_first], Hit@[1, 5, 10]: [0.26397, 0.63911, 0.75941], NDCG@[1, 5, 10]: [0.26397, 0.46017, 0.49958]
+INFO: [Epoch 6] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0392
+INFO: [Epoch 6] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0289%, samples with tied top (>1 item): 3.6181%
+INFO: [Epoch 6] Group [metrics_first], Hit@[1, 5, 10]: [0.18693, 0.50854, 0.64824], NDCG@[1, 5, 10]: [0.18693, 0.35258, 0.39842]
+INFO: [Epoch 6] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.4544
+INFO: [Epoch 6] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.4400%, samples with tied top (>1 item): 21.2087%
+INFO: [Epoch 6] User [metrics_last], Hit@[1, 5, 10]: [0.21266, 0.62144, 0.75371], NDCG@[1, 5, 10]: [0.21266, 0.42602, 0.46907]
+INFO: [Epoch 6] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0392
+INFO: [Epoch 6] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0289%, samples with tied top (>1 item): 3.6181%
+INFO: [Epoch 6] Group [metrics_last], Hit@[1, 5, 10]: [0.1809, 0.50854, 0.64824], NDCG@[1, 5, 10]: [0.1809, 0.34962, 0.39539]
+INFO: [Epoch 6] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.4544
+INFO: [Epoch 6] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.4400%, samples with tied top (>1 item): 21.2087%
+INFO: [Epoch 6] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.23447, 0.63117, 0.75692], NDCG@[1, 5, 10]: [0.23447, 0.44198, 0.48303]
+INFO: [Epoch 6] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0392
+INFO: [Epoch 6] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0289%, samples with tied top (>1 item): 3.6181%
+INFO: [Epoch 6] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.18392, 0.50854, 0.64824], NDCG@[1, 5, 10]: [0.18392, 0.3511, 0.39691]
+INFO: 
+INFO: [Epoch 7] user loss: 0.13442
+INFO: [Epoch 7] group loss: 0.30516
+INFO: [Epoch 7] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.5661
+INFO: [Epoch 7] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.5506%, samples with tied top (>1 item): 24.8575%
+INFO: [Epoch 7] User [metrics], Hit@[1, 5, 10]: [0.27309, 0.64766, 0.76283], NDCG@[1, 5, 10]: [0.27309, 0.46886, 0.5065]
+INFO: [Epoch 7] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0362
+INFO: [Epoch 7] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0259%, samples with tied top (>1 item): 3.2161%
+INFO: [Epoch 7] Group [metrics], Hit@[1, 5, 10]: [0.17688, 0.52663, 0.65628], NDCG@[1, 5, 10]: [0.17688, 0.3579, 0.40055]
+INFO: [Epoch 7] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.5661
+INFO: [Epoch 7] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.5506%, samples with tied top (>1 item): 24.8575%
+INFO: [Epoch 7] User [metrics_first], Hit@[1, 5, 10]: [0.27309, 0.65108, 0.7634], NDCG@[1, 5, 10]: [0.27309, 0.47042, 0.50722]
+INFO: [Epoch 7] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0362
+INFO: [Epoch 7] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0259%, samples with tied top (>1 item): 3.2161%
+INFO: [Epoch 7] Group [metrics_first], Hit@[1, 5, 10]: [0.17688, 0.52663, 0.65628], NDCG@[1, 5, 10]: [0.17688, 0.35808, 0.40074]
+INFO: [Epoch 7] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.5661
+INFO: [Epoch 7] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.5506%, samples with tied top (>1 item): 24.8575%
+INFO: [Epoch 7] User [metrics_last], Hit@[1, 5, 10]: [0.20924, 0.63398, 0.75998], NDCG@[1, 5, 10]: [0.20924, 0.43042, 0.47148]
+INFO: [Epoch 7] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0362
+INFO: [Epoch 7] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0259%, samples with tied top (>1 item): 3.2161%
+INFO: [Epoch 7] Group [metrics_last], Hit@[1, 5, 10]: [0.16985, 0.52462, 0.65628], NDCG@[1, 5, 10]: [0.16985, 0.35406, 0.39736]
+INFO: [Epoch 7] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.5661
+INFO: [Epoch 7] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.5506%, samples with tied top (>1 item): 24.8575%
+INFO: [Epoch 7] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.23576, 0.64279, 0.76205], NDCG@[1, 5, 10]: [0.23576, 0.44854, 0.48749]
+INFO: [Epoch 7] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0362
+INFO: [Epoch 7] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0259%, samples with tied top (>1 item): 3.2161%
+INFO: [Epoch 7] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.17337, 0.52563, 0.65628], NDCG@[1, 5, 10]: [0.17337, 0.35607, 0.39905]
+INFO: 
+INFO: [Epoch 8] user loss: 0.12540
+INFO: [Epoch 8] group loss: 0.29353
+INFO: [Epoch 8] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.2577
+INFO: [Epoch 8] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.2452%, samples with tied top (>1 item): 16.0775%
+INFO: [Epoch 8] User [metrics], Hit@[1, 5, 10]: [0.26226, 0.64937, 0.77081], NDCG@[1, 5, 10]: [0.26226, 0.46479, 0.50424]
+INFO: [Epoch 8] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0251
+INFO: [Epoch 8] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0150%, samples with tied top (>1 item): 2.5126%
+INFO: [Epoch 8] Group [metrics], Hit@[1, 5, 10]: [0.20101, 0.55879, 0.67236], NDCG@[1, 5, 10]: [0.20101, 0.38525, 0.4223]
+INFO: [Epoch 8] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.2577
+INFO: [Epoch 8] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.2452%, samples with tied top (>1 item): 16.0775%
+INFO: [Epoch 8] User [metrics_first], Hit@[1, 5, 10]: [0.26226, 0.65222, 0.77138], NDCG@[1, 5, 10]: [0.26226, 0.46651, 0.50534]
+INFO: [Epoch 8] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0251
+INFO: [Epoch 8] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0150%, samples with tied top (>1 item): 2.5126%
+INFO: [Epoch 8] Group [metrics_first], Hit@[1, 5, 10]: [0.20101, 0.55879, 0.67236], NDCG@[1, 5, 10]: [0.20101, 0.38525, 0.4223]
+INFO: [Epoch 8] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.2577
+INFO: [Epoch 8] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.2452%, samples with tied top (>1 item): 16.0775%
+INFO: [Epoch 8] User [metrics_last], Hit@[1, 5, 10]: [0.22577, 0.6374, 0.76511], NDCG@[1, 5, 10]: [0.22577, 0.44052, 0.48211]
+INFO: [Epoch 8] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0251
+INFO: [Epoch 8] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0150%, samples with tied top (>1 item): 2.5126%
+INFO: [Epoch 8] Group [metrics_last], Hit@[1, 5, 10]: [0.19296, 0.55678, 0.67236], NDCG@[1, 5, 10]: [0.19296, 0.38096, 0.41869]
+INFO: [Epoch 8] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.2577
+INFO: [Epoch 8] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.2452%, samples with tied top (>1 item): 16.0775%
+INFO: [Epoch 8] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.24219, 0.64491, 0.76834], NDCG@[1, 5, 10]: [0.24219, 0.45291, 0.49314]
+INFO: [Epoch 8] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0251
+INFO: [Epoch 8] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0150%, samples with tied top (>1 item): 2.5126%
+INFO: [Epoch 8] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.19698, 0.55779, 0.67236], NDCG@[1, 5, 10]: [0.19698, 0.38311, 0.42049]
+INFO: 
+INFO: [Epoch 9] user loss: 0.12015
+INFO: [Epoch 9] group loss: 0.28509
+INFO: [Epoch 9] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1494
+INFO: [Epoch 9] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.1380%, samples with tied top (>1 item): 9.6921%
+INFO: [Epoch 9] User [metrics], Hit@[1, 5, 10]: [0.24686, 0.64766, 0.76568], NDCG@[1, 5, 10]: [0.24686, 0.45982, 0.49824]
+INFO: [Epoch 9] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0221
+INFO: [Epoch 9] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0120%, samples with tied top (>1 item): 2.2111%
+INFO: [Epoch 9] Group [metrics], Hit@[1, 5, 10]: [0.20704, 0.55276, 0.67337], NDCG@[1, 5, 10]: [0.20704, 0.38764, 0.42756]
+INFO: [Epoch 9] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1494
+INFO: [Epoch 9] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.1380%, samples with tied top (>1 item): 9.6921%
+INFO: [Epoch 9] User [metrics_first], Hit@[1, 5, 10]: [0.24686, 0.65165, 0.77024], NDCG@[1, 5, 10]: [0.24686, 0.46184, 0.50033]
+INFO: [Epoch 9] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0221
+INFO: [Epoch 9] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0120%, samples with tied top (>1 item): 2.2111%
+INFO: [Epoch 9] Group [metrics_first], Hit@[1, 5, 10]: [0.20704, 0.55276, 0.67337], NDCG@[1, 5, 10]: [0.20704, 0.38764, 0.42756]
+INFO: [Epoch 9] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1494
+INFO: [Epoch 9] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.1380%, samples with tied top (>1 item): 9.6921%
+INFO: [Epoch 9] User [metrics_last], Hit@[1, 5, 10]: [0.21779, 0.63569, 0.76454], NDCG@[1, 5, 10]: [0.21779, 0.43834, 0.48025]
+INFO: [Epoch 9] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0221
+INFO: [Epoch 9] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0120%, samples with tied top (>1 item): 2.2111%
+INFO: [Epoch 9] Group [metrics_last], Hit@[1, 5, 10]: [0.19799, 0.55075, 0.67337], NDCG@[1, 5, 10]: [0.19799, 0.38293, 0.4235]
+INFO: [Epoch 9] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1494
+INFO: [Epoch 9] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.1380%, samples with tied top (>1 item): 9.6921%
+INFO: [Epoch 9] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.23154, 0.64435, 0.76739], NDCG@[1, 5, 10]: [0.23154, 0.44992, 0.4899]
+INFO: [Epoch 9] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0221
+INFO: [Epoch 9] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0120%, samples with tied top (>1 item): 2.2111%
+INFO: [Epoch 9] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.20251, 0.55176, 0.67337], NDCG@[1, 5, 10]: [0.20251, 0.38529, 0.42553]
+INFO: 
+INFO: [Epoch 10] user loss: 0.11636
+INFO: [Epoch 10] group loss: 0.27372
+INFO: [Epoch 10] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.2052
+INFO: [Epoch 10] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.1933%, samples with tied top (>1 item): 11.5165%
+INFO: [Epoch 10] User [metrics], Hit@[1, 5, 10]: [0.24971, 0.63911, 0.76397], NDCG@[1, 5, 10]: [0.24971, 0.45843, 0.4991]
+INFO: [Epoch 10] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0261
+INFO: [Epoch 10] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0160%, samples with tied top (>1 item): 2.5126%
+INFO: [Epoch 10] Group [metrics], Hit@[1, 5, 10]: [0.23116, 0.57588, 0.68342], NDCG@[1, 5, 10]: [0.23116, 0.41133, 0.44638]
+INFO: [Epoch 10] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.2052
+INFO: [Epoch 10] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.1933%, samples with tied top (>1 item): 11.5165%
+INFO: [Epoch 10] User [metrics_first], Hit@[1, 5, 10]: [0.24971, 0.64253, 0.76739], NDCG@[1, 5, 10]: [0.24971, 0.46025, 0.50095]
+INFO: [Epoch 10] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0261
+INFO: [Epoch 10] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0160%, samples with tied top (>1 item): 2.5126%
+INFO: [Epoch 10] Group [metrics_first], Hit@[1, 5, 10]: [0.23116, 0.57688, 0.68342], NDCG@[1, 5, 10]: [0.23116, 0.41172, 0.44643]
+INFO: [Epoch 10] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.2052
+INFO: [Epoch 10] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.1933%, samples with tied top (>1 item): 11.5165%
+INFO: [Epoch 10] User [metrics_last], Hit@[1, 5, 10]: [0.21551, 0.62771, 0.76112], NDCG@[1, 5, 10]: [0.21551, 0.43434, 0.47778]
+INFO: [Epoch 10] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0261
+INFO: [Epoch 10] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0160%, samples with tied top (>1 item): 2.5126%
+INFO: [Epoch 10] Group [metrics_last], Hit@[1, 5, 10]: [0.22111, 0.57487, 0.68342], NDCG@[1, 5, 10]: [0.22111, 0.40671, 0.44208]
+INFO: [Epoch 10] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.2052
+INFO: [Epoch 10] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.1933%, samples with tied top (>1 item): 11.5165%
+INFO: [Epoch 10] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.23093, 0.63659, 0.76472], NDCG@[1, 5, 10]: [0.23093, 0.44703, 0.48874]
+INFO: [Epoch 10] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0261
+INFO: [Epoch 10] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0160%, samples with tied top (>1 item): 2.5126%
+INFO: [Epoch 10] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.22613, 0.57588, 0.68342], NDCG@[1, 5, 10]: [0.22613, 0.40921, 0.44425]
+INFO: 
+INFO: [Epoch 11] user loss: 0.10949
+INFO: [Epoch 11] group loss: 0.26523
+INFO: [Epoch 11] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1106
+INFO: [Epoch 11] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0996%, samples with tied top (>1 item): 8.0388%
+INFO: [Epoch 11] User [metrics], Hit@[1, 5, 10]: [0.25599, 0.63911, 0.76454], NDCG@[1, 5, 10]: [0.25599, 0.46142, 0.50243]
+INFO: [Epoch 11] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 11] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.3116%
+INFO: [Epoch 11] Group [metrics], Hit@[1, 5, 10]: [0.26734, 0.57387, 0.67337], NDCG@[1, 5, 10]: [0.26734, 0.42856, 0.46123]
+INFO: [Epoch 11] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1106
+INFO: [Epoch 11] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0996%, samples with tied top (>1 item): 8.0388%
+INFO: [Epoch 11] User [metrics_first], Hit@[1, 5, 10]: [0.25599, 0.64139, 0.76739], NDCG@[1, 5, 10]: [0.25599, 0.46287, 0.50413]
+INFO: [Epoch 11] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 11] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.3116%
+INFO: [Epoch 11] Group [metrics_first], Hit@[1, 5, 10]: [0.26734, 0.57387, 0.67337], NDCG@[1, 5, 10]: [0.26734, 0.42876, 0.46143]
+INFO: [Epoch 11] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1106
+INFO: [Epoch 11] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0996%, samples with tied top (>1 item): 8.0388%
+INFO: [Epoch 11] User [metrics_last], Hit@[1, 5, 10]: [0.22463, 0.6317, 0.75941], NDCG@[1, 5, 10]: [0.22463, 0.44169, 0.48348]
+INFO: [Epoch 11] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 11] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.3116%
+INFO: [Epoch 11] Group [metrics_last], Hit@[1, 5, 10]: [0.25729, 0.57286, 0.67337], NDCG@[1, 5, 10]: [0.25729, 0.42415, 0.45715]
+INFO: [Epoch 11] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1106
+INFO: [Epoch 11] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0996%, samples with tied top (>1 item): 8.0388%
+INFO: [Epoch 11] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.23945, 0.63666, 0.76363], NDCG@[1, 5, 10]: [0.23945, 0.45199, 0.49354]
+INFO: [Epoch 11] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 11] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.3116%
+INFO: [Epoch 11] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.26231, 0.57337, 0.67337], NDCG@[1, 5, 10]: [0.26231, 0.42646, 0.45929]
+INFO: 
+INFO: [Epoch 12] user loss: 0.10698
+INFO: [Epoch 12] group loss: 0.25961
+INFO: [Epoch 12] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1271
+INFO: [Epoch 12] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.1160%, samples with tied top (>1 item): 9.4071%
+INFO: [Epoch 12] User [metrics], Hit@[1, 5, 10]: [0.25884, 0.64424, 0.7691], NDCG@[1, 5, 10]: [0.25884, 0.46363, 0.50447]
+INFO: [Epoch 12] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0291
+INFO: [Epoch 12] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0190%, samples with tied top (>1 item): 2.8141%
+INFO: [Epoch 12] Group [metrics], Hit@[1, 5, 10]: [0.29045, 0.59497, 0.68543], NDCG@[1, 5, 10]: [0.29045, 0.45087, 0.48046]
+INFO: [Epoch 12] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1271
+INFO: [Epoch 12] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.1160%, samples with tied top (>1 item): 9.4071%
+INFO: [Epoch 12] User [metrics_first], Hit@[1, 5, 10]: [0.25884, 0.64709, 0.77138], NDCG@[1, 5, 10]: [0.25884, 0.465, 0.50568]
+INFO: [Epoch 12] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0291
+INFO: [Epoch 12] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0190%, samples with tied top (>1 item): 2.8141%
+INFO: [Epoch 12] Group [metrics_first], Hit@[1, 5, 10]: [0.29045, 0.59497, 0.68543], NDCG@[1, 5, 10]: [0.29045, 0.451, 0.48059]
+INFO: [Epoch 12] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1271
+INFO: [Epoch 12] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.1160%, samples with tied top (>1 item): 9.4071%
+INFO: [Epoch 12] User [metrics_last], Hit@[1, 5, 10]: [0.22406, 0.63683, 0.76454], NDCG@[1, 5, 10]: [0.22406, 0.443, 0.4847]
+INFO: [Epoch 12] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0291
+INFO: [Epoch 12] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0190%, samples with tied top (>1 item): 2.8141%
+INFO: [Epoch 12] Group [metrics_last], Hit@[1, 5, 10]: [0.2804, 0.59397, 0.68442], NDCG@[1, 5, 10]: [0.2804, 0.44631, 0.47594]
+INFO: [Epoch 12] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1271
+INFO: [Epoch 12] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.1160%, samples with tied top (>1 item): 9.4071%
+INFO: [Epoch 12] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.24064, 0.64213, 0.7681], NDCG@[1, 5, 10]: [0.24064, 0.45378, 0.49496]
+INFO: [Epoch 12] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0291
+INFO: [Epoch 12] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0190%, samples with tied top (>1 item): 2.8141%
+INFO: [Epoch 12] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.28543, 0.59447, 0.68492], NDCG@[1, 5, 10]: [0.28543, 0.44865, 0.47827]
+INFO: 
+INFO: [Epoch 13] user loss: 0.10232
+INFO: [Epoch 13] group loss: 0.25710
+INFO: [Epoch 13] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0992
+INFO: [Epoch 13] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0883%, samples with tied top (>1 item): 7.4116%
+INFO: [Epoch 13] User [metrics], Hit@[1, 5, 10]: [0.2634, 0.64994, 0.77024], NDCG@[1, 5, 10]: [0.2634, 0.46713, 0.5065]
+INFO: [Epoch 13] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0221
+INFO: [Epoch 13] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0120%, samples with tied top (>1 item): 2.1106%
+INFO: [Epoch 13] Group [metrics], Hit@[1, 5, 10]: [0.31558, 0.60302, 0.69749], NDCG@[1, 5, 10]: [0.31558, 0.46415, 0.49528]
+INFO: [Epoch 13] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0992
+INFO: [Epoch 13] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0883%, samples with tied top (>1 item): 7.4116%
+INFO: [Epoch 13] User [metrics_first], Hit@[1, 5, 10]: [0.2634, 0.65279, 0.77195], NDCG@[1, 5, 10]: [0.2634, 0.46867, 0.50776]
+INFO: [Epoch 13] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0221
+INFO: [Epoch 13] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0120%, samples with tied top (>1 item): 2.1106%
+INFO: [Epoch 13] Group [metrics_first], Hit@[1, 5, 10]: [0.31558, 0.60302, 0.69849], NDCG@[1, 5, 10]: [0.31558, 0.46428, 0.49573]
+INFO: [Epoch 13] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0992
+INFO: [Epoch 13] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0883%, samples with tied top (>1 item): 7.4116%
+INFO: [Epoch 13] User [metrics_last], Hit@[1, 5, 10]: [0.22862, 0.64082, 0.76454], NDCG@[1, 5, 10]: [0.22862, 0.44609, 0.48663]
+INFO: [Epoch 13] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0221
+INFO: [Epoch 13] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0120%, samples with tied top (>1 item): 2.1106%
+INFO: [Epoch 13] Group [metrics_last], Hit@[1, 5, 10]: [0.30553, 0.60302, 0.69749], NDCG@[1, 5, 10]: [0.30553, 0.4599, 0.49102]
+INFO: [Epoch 13] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0992
+INFO: [Epoch 13] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0883%, samples with tied top (>1 item): 7.4116%
+INFO: [Epoch 13] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.24511, 0.64707, 0.76848], NDCG@[1, 5, 10]: [0.24511, 0.45717, 0.49697]
+INFO: [Epoch 13] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0221
+INFO: [Epoch 13] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0120%, samples with tied top (>1 item): 2.1106%
+INFO: [Epoch 13] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.31055, 0.60302, 0.69799], NDCG@[1, 5, 10]: [0.31055, 0.46209, 0.49338]
+INFO: 
+INFO: [Epoch 14] user loss: 0.09874
+INFO: [Epoch 14] group loss: 0.25219
+INFO: [Epoch 14] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1089
+INFO: [Epoch 14] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0979%, samples with tied top (>1 item): 7.8107%
+INFO: [Epoch 14] User [metrics], Hit@[1, 5, 10]: [0.25884, 0.64994, 0.76625], NDCG@[1, 5, 10]: [0.25884, 0.46528, 0.50341]
+INFO: [Epoch 14] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0221
+INFO: [Epoch 14] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0120%, samples with tied top (>1 item): 2.1106%
+INFO: [Epoch 14] Group [metrics], Hit@[1, 5, 10]: [0.31156, 0.61307, 0.70452], NDCG@[1, 5, 10]: [0.31156, 0.46902, 0.49908]
+INFO: [Epoch 14] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1089
+INFO: [Epoch 14] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0979%, samples with tied top (>1 item): 7.8107%
+INFO: [Epoch 14] User [metrics_first], Hit@[1, 5, 10]: [0.25884, 0.6545, 0.76853], NDCG@[1, 5, 10]: [0.25884, 0.46749, 0.5048]
+INFO: [Epoch 14] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0221
+INFO: [Epoch 14] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0120%, samples with tied top (>1 item): 2.1106%
+INFO: [Epoch 14] Group [metrics_first], Hit@[1, 5, 10]: [0.31156, 0.61307, 0.70452], NDCG@[1, 5, 10]: [0.31156, 0.46929, 0.49936]
+INFO: [Epoch 14] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1089
+INFO: [Epoch 14] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0979%, samples with tied top (>1 item): 7.8107%
+INFO: [Epoch 14] User [metrics_last], Hit@[1, 5, 10]: [0.22805, 0.64025, 0.76454], NDCG@[1, 5, 10]: [0.22805, 0.44557, 0.48624]
+INFO: [Epoch 14] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0221
+INFO: [Epoch 14] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0120%, samples with tied top (>1 item): 2.1106%
+INFO: [Epoch 14] Group [metrics_last], Hit@[1, 5, 10]: [0.30251, 0.61206, 0.70452], NDCG@[1, 5, 10]: [0.30251, 0.4647, 0.49509]
+INFO: [Epoch 14] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1089
+INFO: [Epoch 14] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0979%, samples with tied top (>1 item): 7.8107%
+INFO: [Epoch 14] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.24303, 0.64747, 0.76653], NDCG@[1, 5, 10]: [0.24303, 0.45639, 0.49535]
+INFO: [Epoch 14] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0221
+INFO: [Epoch 14] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0120%, samples with tied top (>1 item): 2.1106%
+INFO: [Epoch 14] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.30704, 0.61256, 0.70452], NDCG@[1, 5, 10]: [0.30704, 0.46699, 0.49723]
+INFO: 
+INFO: [Epoch 15] user loss: 0.09642
+INFO: [Epoch 15] group loss: 0.24995
+INFO: [Epoch 15] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0941
+INFO: [Epoch 15] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0832%, samples with tied top (>1 item): 7.4686%
+INFO: [Epoch 15] User [metrics], Hit@[1, 5, 10]: [0.25542, 0.65165, 0.76682], NDCG@[1, 5, 10]: [0.25542, 0.46638, 0.5042]
+INFO: [Epoch 15] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0211
+INFO: [Epoch 15] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0110%, samples with tied top (>1 item): 2.0101%
+INFO: [Epoch 15] Group [metrics], Hit@[1, 5, 10]: [0.32563, 0.61709, 0.70754], NDCG@[1, 5, 10]: [0.32563, 0.47901, 0.50847]
+INFO: [Epoch 15] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0941
+INFO: [Epoch 15] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0832%, samples with tied top (>1 item): 7.4686%
+INFO: [Epoch 15] User [metrics_first], Hit@[1, 5, 10]: [0.25542, 0.65507, 0.77081], NDCG@[1, 5, 10]: [0.25542, 0.46818, 0.50612]
+INFO: [Epoch 15] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0211
+INFO: [Epoch 15] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0110%, samples with tied top (>1 item): 2.0101%
+INFO: [Epoch 15] Group [metrics_first], Hit@[1, 5, 10]: [0.32563, 0.61709, 0.70754], NDCG@[1, 5, 10]: [0.32563, 0.47927, 0.50873]
+INFO: [Epoch 15] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0941
+INFO: [Epoch 15] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0832%, samples with tied top (>1 item): 7.4686%
+INFO: [Epoch 15] User [metrics_last], Hit@[1, 5, 10]: [0.22064, 0.64424, 0.76454], NDCG@[1, 5, 10]: [0.22064, 0.44617, 0.48552]
+INFO: [Epoch 15] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0211
+INFO: [Epoch 15] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0110%, samples with tied top (>1 item): 2.0101%
+INFO: [Epoch 15] Group [metrics_last], Hit@[1, 5, 10]: [0.31658, 0.61508, 0.70754], NDCG@[1, 5, 10]: [0.31658, 0.4743, 0.50445]
+INFO: [Epoch 15] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0941
+INFO: [Epoch 15] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0832%, samples with tied top (>1 item): 7.4686%
+INFO: [Epoch 15] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.23761, 0.64975, 0.76767], NDCG@[1, 5, 10]: [0.23761, 0.45702, 0.49564]
+INFO: [Epoch 15] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0211
+INFO: [Epoch 15] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0110%, samples with tied top (>1 item): 2.0101%
+INFO: [Epoch 15] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.32111, 0.61608, 0.70754], NDCG@[1, 5, 10]: [0.32111, 0.47678, 0.50659]
+INFO: 
+INFO: [Epoch 16] user loss: 0.09270
+INFO: [Epoch 16] group loss: 0.24570
+INFO: [Epoch 16] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0792
+INFO: [Epoch 16] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0686%, samples with tied top (>1 item): 6.6705%
+INFO: [Epoch 16] User [metrics], Hit@[1, 5, 10]: [0.2634, 0.66192, 0.77138], NDCG@[1, 5, 10]: [0.2634, 0.47351, 0.50911]
+INFO: [Epoch 16] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0251
+INFO: [Epoch 16] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0150%, samples with tied top (>1 item): 2.4121%
+INFO: [Epoch 16] Group [metrics], Hit@[1, 5, 10]: [0.34271, 0.63719, 0.70955], NDCG@[1, 5, 10]: [0.34271, 0.4986, 0.52223]
+INFO: [Epoch 16] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0792
+INFO: [Epoch 16] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0686%, samples with tied top (>1 item): 6.6705%
+INFO: [Epoch 16] User [metrics_first], Hit@[1, 5, 10]: [0.2634, 0.6642, 0.7748], NDCG@[1, 5, 10]: [0.2634, 0.47492, 0.51092]
+INFO: [Epoch 16] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0251
+INFO: [Epoch 16] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0150%, samples with tied top (>1 item): 2.4121%
+INFO: [Epoch 16] Group [metrics_first], Hit@[1, 5, 10]: [0.34271, 0.63719, 0.71055], NDCG@[1, 5, 10]: [0.34271, 0.49873, 0.52268]
+INFO: [Epoch 16] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0792
+INFO: [Epoch 16] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0686%, samples with tied top (>1 item): 6.6705%
+INFO: [Epoch 16] User [metrics_last], Hit@[1, 5, 10]: [0.23318, 0.64937, 0.76796], NDCG@[1, 5, 10]: [0.23318, 0.4533, 0.49197]
+INFO: [Epoch 16] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0251
+INFO: [Epoch 16] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0150%, samples with tied top (>1 item): 2.4121%
+INFO: [Epoch 16] Group [metrics_last], Hit@[1, 5, 10]: [0.33065, 0.63618, 0.70955], NDCG@[1, 5, 10]: [0.33065, 0.49341, 0.51739]
+INFO: [Epoch 16] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0792
+INFO: [Epoch 16] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0686%, samples with tied top (>1 item): 6.6705%
+INFO: [Epoch 16] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.24792, 0.65697, 0.77128], NDCG@[1, 5, 10]: [0.24792, 0.46399, 0.50124]
+INFO: [Epoch 16] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0251
+INFO: [Epoch 16] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0150%, samples with tied top (>1 item): 2.4121%
+INFO: [Epoch 16] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.33668, 0.63668, 0.70958], NDCG@[1, 5, 10]: [0.33668, 0.49607, 0.51989]
+INFO: 
+INFO: [Epoch 17] user loss: 0.08990
+INFO: [Epoch 17] group loss: 0.24199
+INFO: [Epoch 17] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1066
+INFO: [Epoch 17] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0957%, samples with tied top (>1 item): 7.5827%
+INFO: [Epoch 17] User [metrics], Hit@[1, 5, 10]: [0.26169, 0.65621, 0.77309], NDCG@[1, 5, 10]: [0.26169, 0.47234, 0.51061]
+INFO: [Epoch 17] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0261
+INFO: [Epoch 17] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0160%, samples with tied top (>1 item): 2.6131%
+INFO: [Epoch 17] Group [metrics], Hit@[1, 5, 10]: [0.35879, 0.62111, 0.70955], NDCG@[1, 5, 10]: [0.35879, 0.49783, 0.52715]
+INFO: [Epoch 17] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1066
+INFO: [Epoch 17] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0957%, samples with tied top (>1 item): 7.5827%
+INFO: [Epoch 17] User [metrics_first], Hit@[1, 5, 10]: [0.26169, 0.65792, 0.77366], NDCG@[1, 5, 10]: [0.26169, 0.47364, 0.51171]
+INFO: [Epoch 17] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0261
+INFO: [Epoch 17] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0160%, samples with tied top (>1 item): 2.6131%
+INFO: [Epoch 17] Group [metrics_first], Hit@[1, 5, 10]: [0.35879, 0.62111, 0.71156], NDCG@[1, 5, 10]: [0.35879, 0.498, 0.52796]
+INFO: [Epoch 17] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1066
+INFO: [Epoch 17] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0957%, samples with tied top (>1 item): 7.5827%
+INFO: [Epoch 17] User [metrics_last], Hit@[1, 5, 10]: [0.2309, 0.64595, 0.76853], NDCG@[1, 5, 10]: [0.2309, 0.452, 0.49216]
+INFO: [Epoch 17] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0261
+INFO: [Epoch 17] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0160%, samples with tied top (>1 item): 2.6131%
+INFO: [Epoch 17] Group [metrics_last], Hit@[1, 5, 10]: [0.34573, 0.62111, 0.70854], NDCG@[1, 5, 10]: [0.34573, 0.49257, 0.5216]
+INFO: [Epoch 17] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1066
+INFO: [Epoch 17] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0957%, samples with tied top (>1 item): 7.5827%
+INFO: [Epoch 17] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.24573, 0.65199, 0.77119], NDCG@[1, 5, 10]: [0.24573, 0.4626, 0.50173]
+INFO: [Epoch 17] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0261
+INFO: [Epoch 17] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0160%, samples with tied top (>1 item): 2.6131%
+INFO: [Epoch 17] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.35226, 0.62111, 0.7091], NDCG@[1, 5, 10]: [0.35226, 0.49529, 0.52448]
+INFO: 
+INFO: [Epoch 18] user loss: 0.08919
+INFO: [Epoch 18] group loss: 0.24104
+INFO: [Epoch 18] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0730
+INFO: [Epoch 18] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0624%, samples with tied top (>1 item): 6.1003%
+INFO: [Epoch 18] User [metrics], Hit@[1, 5, 10]: [0.2634, 0.65964, 0.77366], NDCG@[1, 5, 10]: [0.2634, 0.47456, 0.51184]
+INFO: [Epoch 18] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 18] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.3116%
+INFO: [Epoch 18] Group [metrics], Hit@[1, 5, 10]: [0.34975, 0.63317, 0.70955], NDCG@[1, 5, 10]: [0.34975, 0.5007, 0.52608]
+INFO: [Epoch 18] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0730
+INFO: [Epoch 18] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0624%, samples with tied top (>1 item): 6.1003%
+INFO: [Epoch 18] User [metrics_first], Hit@[1, 5, 10]: [0.2634, 0.66306, 0.77651], NDCG@[1, 5, 10]: [0.2634, 0.47651, 0.51362]
+INFO: [Epoch 18] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 18] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.3116%
+INFO: [Epoch 18] Group [metrics_first], Hit@[1, 5, 10]: [0.34975, 0.63317, 0.71457], NDCG@[1, 5, 10]: [0.34975, 0.50083, 0.52779]
+INFO: [Epoch 18] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0730
+INFO: [Epoch 18] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0624%, samples with tied top (>1 item): 6.1003%
+INFO: [Epoch 18] User [metrics_last], Hit@[1, 5, 10]: [0.23375, 0.65222, 0.77195], NDCG@[1, 5, 10]: [0.23375, 0.45654, 0.49555]
+INFO: [Epoch 18] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 18] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.3116%
+INFO: [Epoch 18] Group [metrics_last], Hit@[1, 5, 10]: [0.33869, 0.63216, 0.70754], NDCG@[1, 5, 10]: [0.33869, 0.4955, 0.52058]
+INFO: [Epoch 18] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0730
+INFO: [Epoch 18] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0624%, samples with tied top (>1 item): 6.1003%
+INFO: [Epoch 18] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.24835, 0.65758, 0.77433], NDCG@[1, 5, 10]: [0.24835, 0.46637, 0.50448]
+INFO: [Epoch 18] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 18] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.3116%
+INFO: [Epoch 18] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.34422, 0.63219, 0.70777], NDCG@[1, 5, 10]: [0.34422, 0.49793, 0.52308]
+INFO: 
+INFO: [Epoch 19] user loss: 0.08782
+INFO: [Epoch 19] group loss: 0.24090
+INFO: [Epoch 19] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0661
+INFO: [Epoch 19] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0556%, samples with tied top (>1 item): 5.8153%
+INFO: [Epoch 19] User [metrics], Hit@[1, 5, 10]: [0.26853, 0.65906, 0.78335], NDCG@[1, 5, 10]: [0.26853, 0.47662, 0.51731]
+INFO: [Epoch 19] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0251
+INFO: [Epoch 19] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0150%, samples with tied top (>1 item): 2.5126%
+INFO: [Epoch 19] Group [metrics], Hit@[1, 5, 10]: [0.36683, 0.64925, 0.7196], NDCG@[1, 5, 10]: [0.36683, 0.51816, 0.54123]
+INFO: [Epoch 19] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0661
+INFO: [Epoch 19] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0556%, samples with tied top (>1 item): 5.8153%
+INFO: [Epoch 19] User [metrics_first], Hit@[1, 5, 10]: [0.26853, 0.66135, 0.78506], NDCG@[1, 5, 10]: [0.26853, 0.47797, 0.51857]
+INFO: [Epoch 19] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0251
+INFO: [Epoch 19] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0150%, samples with tied top (>1 item): 2.5126%
+INFO: [Epoch 19] Group [metrics_first], Hit@[1, 5, 10]: [0.36683, 0.64925, 0.72764], NDCG@[1, 5, 10]: [0.36683, 0.51833, 0.54388]
+INFO: [Epoch 19] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0661
+INFO: [Epoch 19] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0556%, samples with tied top (>1 item): 5.8153%
+INFO: [Epoch 19] User [metrics_last], Hit@[1, 5, 10]: [0.23717, 0.64937, 0.77936], NDCG@[1, 5, 10]: [0.23717, 0.45728, 0.49985]
+INFO: [Epoch 19] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0251
+INFO: [Epoch 19] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0150%, samples with tied top (>1 item): 2.5126%
+INFO: [Epoch 19] Group [metrics_last], Hit@[1, 5, 10]: [0.35377, 0.64623, 0.71156], NDCG@[1, 5, 10]: [0.35377, 0.51155, 0.53316]
+INFO: [Epoch 19] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0661
+INFO: [Epoch 19] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0556%, samples with tied top (>1 item): 5.8153%
+INFO: [Epoch 19] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.25266, 0.65519, 0.78221], NDCG@[1, 5, 10]: [0.25266, 0.46751, 0.50916]
+INFO: [Epoch 19] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0251
+INFO: [Epoch 19] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0150%, samples with tied top (>1 item): 2.5126%
+INFO: [Epoch 19] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.3603, 0.64678, 0.71202], NDCG@[1, 5, 10]: [0.3603, 0.51449, 0.53606]
+INFO: 
+INFO: [Epoch 20] user loss: 0.08559
+INFO: [Epoch 20] group loss: 0.24117
+INFO: [Epoch 20] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0656
+INFO: [Epoch 20] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0550%, samples with tied top (>1 item): 5.8723%
+INFO: [Epoch 20] User [metrics], Hit@[1, 5, 10]: [0.27024, 0.66021, 0.78392], NDCG@[1, 5, 10]: [0.27024, 0.47755, 0.51805]
+INFO: [Epoch 20] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0261
+INFO: [Epoch 20] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0160%, samples with tied top (>1 item): 2.6131%
+INFO: [Epoch 20] Group [metrics], Hit@[1, 5, 10]: [0.37889, 0.65025, 0.72462], NDCG@[1, 5, 10]: [0.37889, 0.52527, 0.54949]
+INFO: [Epoch 20] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0656
+INFO: [Epoch 20] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0550%, samples with tied top (>1 item): 5.8723%
+INFO: [Epoch 20] User [metrics_first], Hit@[1, 5, 10]: [0.27024, 0.6642, 0.78563], NDCG@[1, 5, 10]: [0.27024, 0.4795, 0.51921]
+INFO: [Epoch 20] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0261
+INFO: [Epoch 20] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0160%, samples with tied top (>1 item): 2.6131%
+INFO: [Epoch 20] Group [metrics_first], Hit@[1, 5, 10]: [0.37889, 0.65126, 0.73869], NDCG@[1, 5, 10]: [0.37889, 0.52592, 0.55411]
+INFO: [Epoch 20] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0656
+INFO: [Epoch 20] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0550%, samples with tied top (>1 item): 5.8723%
+INFO: [Epoch 20] User [metrics_last], Hit@[1, 5, 10]: [0.24116, 0.65108, 0.77936], NDCG@[1, 5, 10]: [0.24116, 0.45898, 0.50097]
+INFO: [Epoch 20] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0261
+INFO: [Epoch 20] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0160%, samples with tied top (>1 item): 2.6131%
+INFO: [Epoch 20] Group [metrics_last], Hit@[1, 5, 10]: [0.36683, 0.64724, 0.71558], NDCG@[1, 5, 10]: [0.36683, 0.51882, 0.54121]
+INFO: [Epoch 20] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0656
+INFO: [Epoch 20] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0550%, samples with tied top (>1 item): 5.8723%
+INFO: [Epoch 20] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.25533, 0.65776, 0.7825], NDCG@[1, 5, 10]: [0.25533, 0.46912, 0.50993]
+INFO: [Epoch 20] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0261
+INFO: [Epoch 20] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0160%, samples with tied top (>1 item): 2.6131%
+INFO: [Epoch 20] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.37286, 0.64782, 0.7168], NDCG@[1, 5, 10]: [0.37286, 0.52165, 0.54419]
+INFO: 
+INFO: [Epoch 21] user loss: 0.08281
+INFO: [Epoch 21] group loss: 0.23958
+INFO: [Epoch 21] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0450
+INFO: [Epoch 21] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0347%, samples with tied top (>1 item): 4.3900%
+INFO: [Epoch 21] User [metrics], Hit@[1, 5, 10]: [0.26967, 0.66477, 0.7805], NDCG@[1, 5, 10]: [0.26967, 0.47957, 0.51753]
+INFO: [Epoch 21] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0271
+INFO: [Epoch 21] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0170%, samples with tied top (>1 item): 2.7136%
+INFO: [Epoch 21] Group [metrics], Hit@[1, 5, 10]: [0.38593, 0.65528, 0.72864], NDCG@[1, 5, 10]: [0.38593, 0.53094, 0.55484]
+INFO: [Epoch 21] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0450
+INFO: [Epoch 21] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0347%, samples with tied top (>1 item): 4.3900%
+INFO: [Epoch 21] User [metrics_first], Hit@[1, 5, 10]: [0.26967, 0.66705, 0.78221], NDCG@[1, 5, 10]: [0.26967, 0.48111, 0.51897]
+INFO: [Epoch 21] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0271
+INFO: [Epoch 21] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0170%, samples with tied top (>1 item): 2.7136%
+INFO: [Epoch 21] Group [metrics_first], Hit@[1, 5, 10]: [0.38593, 0.65628, 0.74372], NDCG@[1, 5, 10]: [0.38593, 0.53183, 0.5601]
+INFO: [Epoch 21] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0450
+INFO: [Epoch 21] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0347%, samples with tied top (>1 item): 4.3900%
+INFO: [Epoch 21] User [metrics_last], Hit@[1, 5, 10]: [0.24173, 0.6545, 0.77651], NDCG@[1, 5, 10]: [0.24173, 0.46148, 0.50156]
+INFO: [Epoch 21] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0271
+INFO: [Epoch 21] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0170%, samples with tied top (>1 item): 2.7136%
+INFO: [Epoch 21] Group [metrics_last], Hit@[1, 5, 10]: [0.37387, 0.65126, 0.71658], NDCG@[1, 5, 10]: [0.37387, 0.52364, 0.54503]
+INFO: [Epoch 21] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0450
+INFO: [Epoch 21] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0347%, samples with tied top (>1 item): 4.3900%
+INFO: [Epoch 21] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.2557, 0.66087, 0.77946], NDCG@[1, 5, 10]: [0.2557, 0.47131, 0.51028]
+INFO: [Epoch 21] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0271
+INFO: [Epoch 21] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0170%, samples with tied top (>1 item): 2.7136%
+INFO: [Epoch 21] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.3799, 0.65144, 0.71811], NDCG@[1, 5, 10]: [0.3799, 0.52637, 0.54816]
+INFO: 
+INFO: [Epoch 22] user loss: 0.08166
+INFO: [Epoch 22] group loss: 0.23907
+INFO: [Epoch 22] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0433
+INFO: [Epoch 22] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0330%, samples with tied top (>1 item): 4.2759%
+INFO: [Epoch 22] User [metrics], Hit@[1, 5, 10]: [0.26397, 0.66819, 0.77822], NDCG@[1, 5, 10]: [0.26397, 0.47869, 0.51475]
+INFO: [Epoch 22] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1266
+INFO: [Epoch 22] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.1155%, samples with tied top (>1 item): 2.7136%
+INFO: [Epoch 22] Group [metrics], Hit@[1, 5, 10]: [0.39799, 0.65729, 0.7397], NDCG@[1, 5, 10]: [0.39799, 0.53882, 0.56558]
+INFO: [Epoch 22] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0433
+INFO: [Epoch 22] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0330%, samples with tied top (>1 item): 4.2759%
+INFO: [Epoch 22] User [metrics_first], Hit@[1, 5, 10]: [0.26397, 0.67218, 0.7805], NDCG@[1, 5, 10]: [0.26397, 0.48072, 0.51621]
+INFO: [Epoch 22] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1266
+INFO: [Epoch 22] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.1155%, samples with tied top (>1 item): 2.7136%
+INFO: [Epoch 22] Group [metrics_first], Hit@[1, 5, 10]: [0.39799, 0.65829, 0.75879], NDCG@[1, 5, 10]: [0.39799, 0.53945, 0.57187]
+INFO: [Epoch 22] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0433
+INFO: [Epoch 22] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0330%, samples with tied top (>1 item): 4.2759%
+INFO: [Epoch 22] User [metrics_last], Hit@[1, 5, 10]: [0.23774, 0.65849, 0.77423], NDCG@[1, 5, 10]: [0.23774, 0.46094, 0.49898]
+INFO: [Epoch 22] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1266
+INFO: [Epoch 22] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.1155%, samples with tied top (>1 item): 2.7136%
+INFO: [Epoch 22] Group [metrics_last], Hit@[1, 5, 10]: [0.38291, 0.65226, 0.7206], NDCG@[1, 5, 10]: [0.38291, 0.52976, 0.55206]
+INFO: [Epoch 22] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0433
+INFO: [Epoch 22] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0330%, samples with tied top (>1 item): 4.2759%
+INFO: [Epoch 22] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.25086, 0.66534, 0.77746], NDCG@[1, 5, 10]: [0.25086, 0.47082, 0.50761]
+INFO: [Epoch 22] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.1266
+INFO: [Epoch 22] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.1155%, samples with tied top (>1 item): 2.7136%
+INFO: [Epoch 22] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.38996, 0.65248, 0.72256], NDCG@[1, 5, 10]: [0.38996, 0.53275, 0.55558]
+INFO: 
+INFO: [Epoch 23] user loss: 0.08019
+INFO: [Epoch 23] group loss: 0.23753
+INFO: [Epoch 23] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0456
+INFO: [Epoch 23] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0353%, samples with tied top (>1 item): 4.5610%
+INFO: [Epoch 23] User [metrics], Hit@[1, 5, 10]: [0.2691, 0.67617, 0.7805], NDCG@[1, 5, 10]: [0.2691, 0.48393, 0.51795]
+INFO: [Epoch 23] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 23] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.3116%
+INFO: [Epoch 23] Group [metrics], Hit@[1, 5, 10]: [0.40503, 0.66734, 0.74171], NDCG@[1, 5, 10]: [0.40503, 0.54458, 0.5685]
+INFO: [Epoch 23] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0456
+INFO: [Epoch 23] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0353%, samples with tied top (>1 item): 4.5610%
+INFO: [Epoch 23] User [metrics_first], Hit@[1, 5, 10]: [0.2691, 0.67902, 0.78449], NDCG@[1, 5, 10]: [0.2691, 0.48602, 0.52037]
+INFO: [Epoch 23] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 23] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.3116%
+INFO: [Epoch 23] Group [metrics_first], Hit@[1, 5, 10]: [0.40503, 0.66834, 0.76382], NDCG@[1, 5, 10]: [0.40503, 0.54534, 0.57584]
+INFO: [Epoch 23] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0456
+INFO: [Epoch 23] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0353%, samples with tied top (>1 item): 4.5610%
+INFO: [Epoch 23] User [metrics_last], Hit@[1, 5, 10]: [0.24002, 0.66705, 0.77651], NDCG@[1, 5, 10]: [0.24002, 0.46586, 0.50171]
+INFO: [Epoch 23] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 23] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.3116%
+INFO: [Epoch 23] Group [metrics_last], Hit@[1, 5, 10]: [0.39196, 0.6603, 0.71658], NDCG@[1, 5, 10]: [0.39196, 0.53557, 0.55376]
+INFO: [Epoch 23] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0456
+INFO: [Epoch 23] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0353%, samples with tied top (>1 item): 4.5610%
+INFO: [Epoch 23] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.25456, 0.67286, 0.7805], NDCG@[1, 5, 10]: [0.25456, 0.47585, 0.51101]
+INFO: [Epoch 23] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0231
+INFO: [Epoch 23] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0130%, samples with tied top (>1 item): 2.3116%
+INFO: [Epoch 23] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.39849, 0.66053, 0.7188], NDCG@[1, 5, 10]: [0.39849, 0.53844, 0.55724]
+INFO: 
+INFO: [Epoch 24] user loss: 0.07862
+INFO: [Epoch 24] group loss: 0.23649
+INFO: [Epoch 24] [user evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0519
+INFO: [Epoch 24] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0415%, samples with tied top (>1 item): 5.0171%
+INFO: [Epoch 24] User [metrics], Hit@[1, 5, 10]: [0.2691, 0.67503, 0.78221], NDCG@[1, 5, 10]: [0.2691, 0.48455, 0.51955]
+INFO: [Epoch 24] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.2251
+INFO: [Epoch 24] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.2130%, samples with tied top (>1 item): 2.6131%
+INFO: [Epoch 24] Group [metrics], Hit@[1, 5, 10]: [0.40704, 0.66131, 0.74573], NDCG@[1, 5, 10]: [0.40704, 0.54362, 0.5709]
+INFO: [Epoch 24] [user evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0519
+INFO: [Epoch 24] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0415%, samples with tied top (>1 item): 5.0171%
+INFO: [Epoch 24] User [metrics_first], Hit@[1, 5, 10]: [0.2691, 0.67788, 0.78449], NDCG@[1, 5, 10]: [0.2691, 0.48646, 0.52124]
+INFO: [Epoch 24] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.2251
+INFO: [Epoch 24] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.2130%, samples with tied top (>1 item): 2.6131%
+INFO: [Epoch 24] Group [metrics_first], Hit@[1, 5, 10]: [0.40704, 0.66533, 0.77186], NDCG@[1, 5, 10]: [0.40704, 0.5454, 0.57949]
+INFO: [Epoch 24] [user evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0519
+INFO: [Epoch 24] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0415%, samples with tied top (>1 item): 5.0171%
+INFO: [Epoch 24] User [metrics_last], Hit@[1, 5, 10]: [0.23888, 0.67047, 0.7805], NDCG@[1, 5, 10]: [0.23888, 0.46725, 0.50305]
+INFO: [Epoch 24] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.2251
+INFO: [Epoch 24] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.2130%, samples with tied top (>1 item): 2.6131%
+INFO: [Epoch 24] Group [metrics_last], Hit@[1, 5, 10]: [0.39296, 0.65327, 0.72161], NDCG@[1, 5, 10]: [0.39296, 0.53361, 0.55572]
+INFO: [Epoch 24] [user evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.0519
+INFO: [Epoch 24] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0415%, samples with tied top (>1 item): 5.0171%
+INFO: [Epoch 24] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.2538, 0.67417, 0.78231], NDCG@[1, 5, 10]: [0.2538, 0.47679, 0.51203]
+INFO: [Epoch 24] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.2251
+INFO: [Epoch 24] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.2130%, samples with tied top (>1 item): 2.6131%
+INFO: [Epoch 24] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.39901, 0.65357, 0.72361], NDCG@[1, 5, 10]: [0.39901, 0.5364, 0.55904]
+INFO: 
+INFO: [Epoch 25] user loss: 0.07709
+INFO: [Epoch 25] group loss: 0.23751
+INFO: [Epoch 25] [user evaluate] [metrics] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0416
+INFO: [Epoch 25] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0313%, samples with tied top (>1 item): 4.1619%
+INFO: [Epoch 25] User [metrics], Hit@[1, 5, 10]: [0.26967, 0.67047, 0.78449], NDCG@[1, 5, 10]: [0.26967, 0.48316, 0.52061]
+INFO: [Epoch 25] [group evaluate] [metrics] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.5266
+INFO: [Epoch 25] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.5115%, samples with tied top (>1 item): 2.8141%
+INFO: [Epoch 25] Group [metrics], Hit@[1, 5, 10]: [0.42915, 0.68342, 0.76583], NDCG@[1, 5, 10]: [0.42915, 0.56598, 0.59245]
+INFO: [Epoch 25] [user evaluate] [metrics_first] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0416
+INFO: [Epoch 25] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0313%, samples with tied top (>1 item): 4.1619%
+INFO: [Epoch 25] User [metrics_first], Hit@[1, 5, 10]: [0.26967, 0.67446, 0.78905], NDCG@[1, 5, 10]: [0.26967, 0.48567, 0.52318]
+INFO: [Epoch 25] [group evaluate] [metrics_first] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.5266
+INFO: [Epoch 25] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.5115%, samples with tied top (>1 item): 2.8141%
+INFO: [Epoch 25] Group [metrics_first], Hit@[1, 5, 10]: [0.42915, 0.68744, 0.8], NDCG@[1, 5, 10]: [0.42915, 0.56784, 0.60383]
+INFO: [Epoch 25] [user evaluate] [metrics_last] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0416
+INFO: [Epoch 25] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0313%, samples with tied top (>1 item): 4.1619%
+INFO: [Epoch 25] User [metrics_last], Hit@[1, 5, 10]: [0.24173, 0.66249, 0.78278], NDCG@[1, 5, 10]: [0.24173, 0.46582, 0.50533]
+INFO: [Epoch 25] [group evaluate] [metrics_last] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.5266
+INFO: [Epoch 25] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.5115%, samples with tied top (>1 item): 2.8141%
+INFO: [Epoch 25] Group [metrics_last], Hit@[1, 5, 10]: [0.41106, 0.66633, 0.72663], NDCG@[1, 5, 10]: [0.41106, 0.55046, 0.56978]
+INFO: [Epoch 25] [user evaluate] [metrics_tie_aware] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0416
+INFO: [Epoch 25] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0313%, samples with tied top (>1 item): 4.1619%
+INFO: [Epoch 25] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.2557, 0.66857, 0.78582], NDCG@[1, 5, 10]: [0.2557, 0.47577, 0.51422]
+INFO: [Epoch 25] [group evaluate] [metrics_tie_aware] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.5266
+INFO: [Epoch 25] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.5115%, samples with tied top (>1 item): 2.8141%
+INFO: [Epoch 25] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.41764, 0.66687, 0.7299], NDCG@[1, 5, 10]: [0.41764, 0.55349, 0.57368]
+INFO: 
+INFO: [Epoch 26] user loss: 0.07610
+INFO: [Epoch 26] group loss: 0.23618
+INFO: [Epoch 26] [user evaluate] [metrics] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0371
+INFO: [Epoch 26] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0268%, samples with tied top (>1 item): 3.6488%
+INFO: [Epoch 26] User [metrics], Hit@[1, 5, 10]: [0.27594, 0.67788, 0.78278], NDCG@[1, 5, 10]: [0.27594, 0.49062, 0.52492]
+INFO: [Epoch 26] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.5256
+INFO: [Epoch 26] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.5105%, samples with tied top (>1 item): 2.8141%
+INFO: [Epoch 26] Group [metrics], Hit@[1, 5, 10]: [0.42211, 0.68241, 0.76683], NDCG@[1, 5, 10]: [0.42211, 0.56333, 0.5906]
+INFO: [Epoch 26] [user evaluate] [metrics_first] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0371
+INFO: [Epoch 26] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0268%, samples with tied top (>1 item): 3.6488%
+INFO: [Epoch 26] User [metrics_first], Hit@[1, 5, 10]: [0.27594, 0.68016, 0.78563], NDCG@[1, 5, 10]: [0.27594, 0.49205, 0.52649]
+INFO: [Epoch 26] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.5256
+INFO: [Epoch 26] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.5105%, samples with tied top (>1 item): 2.8141%
+INFO: [Epoch 26] Group [metrics_first], Hit@[1, 5, 10]: [0.42211, 0.68744, 0.80503], NDCG@[1, 5, 10]: [0.42211, 0.56554, 0.60338]
+INFO: [Epoch 26] [user evaluate] [metrics_last] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0371
+INFO: [Epoch 26] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0268%, samples with tied top (>1 item): 3.6488%
+INFO: [Epoch 26] User [metrics_last], Hit@[1, 5, 10]: [0.24971, 0.67047, 0.77936], NDCG@[1, 5, 10]: [0.24971, 0.47343, 0.509]
+INFO: [Epoch 26] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.5256
+INFO: [Epoch 26] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.5105%, samples with tied top (>1 item): 2.8141%
+INFO: [Epoch 26] Group [metrics_last], Hit@[1, 5, 10]: [0.40503, 0.66231, 0.72563], NDCG@[1, 5, 10]: [0.40503, 0.54605, 0.56664]
+INFO: [Epoch 26] [user evaluate] [metrics_tie_aware] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0371
+INFO: [Epoch 26] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0268%, samples with tied top (>1 item): 3.6488%
+INFO: [Epoch 26] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.26283, 0.67541, 0.7824], NDCG@[1, 5, 10]: [0.26283, 0.48276, 0.5177]
+INFO: [Epoch 26] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.5256
+INFO: [Epoch 26] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.5105%, samples with tied top (>1 item): 2.8141%
+INFO: [Epoch 26] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.41111, 0.66302, 0.72928], NDCG@[1, 5, 10]: [0.41111, 0.54903, 0.57055]
+INFO: 
+INFO: [Epoch 27] user loss: 0.07455
+INFO: [Epoch 27] group loss: 0.23515
+INFO: [Epoch 27] [user evaluate] [metrics] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0416
+INFO: [Epoch 27] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0313%, samples with tied top (>1 item): 4.0479%
+INFO: [Epoch 27] User [metrics], Hit@[1, 5, 10]: [0.27651, 0.6756, 0.78563], NDCG@[1, 5, 10]: [0.27651, 0.48988, 0.52581]
+INFO: [Epoch 27] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.4271
+INFO: [Epoch 27] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.4130%, samples with tied top (>1 item): 2.9146%
+INFO: [Epoch 27] Group [metrics], Hit@[1, 5, 10]: [0.42513, 0.68342, 0.76985], NDCG@[1, 5, 10]: [0.42513, 0.56425, 0.59219]
+INFO: [Epoch 27] [user evaluate] [metrics_first] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0416
+INFO: [Epoch 27] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0313%, samples with tied top (>1 item): 4.0479%
+INFO: [Epoch 27] User [metrics_first], Hit@[1, 5, 10]: [0.27651, 0.68016, 0.78848], NDCG@[1, 5, 10]: [0.27651, 0.49226, 0.52756]
+INFO: [Epoch 27] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.4271
+INFO: [Epoch 27] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.4130%, samples with tied top (>1 item): 2.9146%
+INFO: [Epoch 27] Group [metrics_first], Hit@[1, 5, 10]: [0.42513, 0.69045, 0.81508], NDCG@[1, 5, 10]: [0.42513, 0.56739, 0.60759]
+INFO: [Epoch 27] [user evaluate] [metrics_last] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0416
+INFO: [Epoch 27] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0313%, samples with tied top (>1 item): 4.0479%
+INFO: [Epoch 27] User [metrics_last], Hit@[1, 5, 10]: [0.248, 0.6699, 0.78164], NDCG@[1, 5, 10]: [0.248, 0.47302, 0.50949]
+INFO: [Epoch 27] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.4271
+INFO: [Epoch 27] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.4130%, samples with tied top (>1 item): 2.9146%
+INFO: [Epoch 27] Group [metrics_last], Hit@[1, 5, 10]: [0.40704, 0.6603, 0.72362], NDCG@[1, 5, 10]: [0.40704, 0.54483, 0.56541]
+INFO: [Epoch 27] [user evaluate] [metrics_tie_aware] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0416
+INFO: [Epoch 27] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0313%, samples with tied top (>1 item): 4.0479%
+INFO: [Epoch 27] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.26226, 0.67503, 0.78497], NDCG@[1, 5, 10]: [0.26226, 0.48262, 0.51848]
+INFO: [Epoch 27] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.4271
+INFO: [Epoch 27] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.4130%, samples with tied top (>1 item): 2.9146%
+INFO: [Epoch 27] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.41411, 0.66117, 0.72796], NDCG@[1, 5, 10]: [0.41411, 0.54809, 0.56977]
+INFO: 
+INFO: [Epoch 28] user loss: 0.07401
+INFO: [Epoch 28] group loss: 0.23250
+INFO: [Epoch 28] [user evaluate] [metrics] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0428
+INFO: [Epoch 28] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0324%, samples with tied top (>1 item): 4.2189%
+INFO: [Epoch 28] User [metrics], Hit@[1, 5, 10]: [0.27366, 0.67788, 0.78791], NDCG@[1, 5, 10]: [0.27366, 0.48885, 0.52466]
+INFO: [Epoch 28] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.7266
+INFO: [Epoch 28] [group evaluate] [metrics] top-score tie ratio (avg per sample): 1.7095%, samples with tied top (>1 item): 3.0151%
+INFO: [Epoch 28] Group [metrics], Hit@[1, 5, 10]: [0.44523, 0.69749, 0.78392], NDCG@[1, 5, 10]: [0.44523, 0.58138, 0.60907]
+INFO: [Epoch 28] [user evaluate] [metrics_first] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0428
+INFO: [Epoch 28] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0324%, samples with tied top (>1 item): 4.2189%
+INFO: [Epoch 28] User [metrics_first], Hit@[1, 5, 10]: [0.27366, 0.68244, 0.79247], NDCG@[1, 5, 10]: [0.27366, 0.49111, 0.52674]
+INFO: [Epoch 28] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.7266
+INFO: [Epoch 28] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.7095%, samples with tied top (>1 item): 3.0151%
+INFO: [Epoch 28] Group [metrics_first], Hit@[1, 5, 10]: [0.44523, 0.70653, 0.83015], NDCG@[1, 5, 10]: [0.44523, 0.5857, 0.62544]
+INFO: [Epoch 28] [user evaluate] [metrics_last] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0428
+INFO: [Epoch 28] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0324%, samples with tied top (>1 item): 4.2189%
+INFO: [Epoch 28] User [metrics_last], Hit@[1, 5, 10]: [0.24572, 0.67389, 0.78449], NDCG@[1, 5, 10]: [0.24572, 0.47267, 0.50856]
+INFO: [Epoch 28] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.7266
+INFO: [Epoch 28] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.7095%, samples with tied top (>1 item): 3.0151%
+INFO: [Epoch 28] Group [metrics_last], Hit@[1, 5, 10]: [0.42513, 0.66734, 0.72764], NDCG@[1, 5, 10]: [0.42513, 0.55692, 0.57628]
+INFO: [Epoch 28] [user evaluate] [metrics_tie_aware] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0428
+INFO: [Epoch 28] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0324%, samples with tied top (>1 item): 4.2189%
+INFO: [Epoch 28] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.2596, 0.67816, 0.78858], NDCG@[1, 5, 10]: [0.2596, 0.48186, 0.51765]
+INFO: [Epoch 28] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 1.7266
+INFO: [Epoch 28] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.7095%, samples with tied top (>1 item): 3.0151%
+INFO: [Epoch 28] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.43173, 0.66855, 0.73296], NDCG@[1, 5, 10]: [0.43173, 0.56022, 0.58088]
+INFO: 
+INFO: [Epoch 29] user loss: 0.07380
+INFO: [Epoch 29] group loss: 0.23054
+INFO: [Epoch 29] [user evaluate] [metrics] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0445
+INFO: [Epoch 29] [user evaluate] [metrics] top-score tie ratio (avg per sample): 1.0341%, samples with tied top (>1 item): 4.3330%
+INFO: [Epoch 29] User [metrics], Hit@[1, 5, 10]: [0.27537, 0.67617, 0.78221], NDCG@[1, 5, 10]: [0.27537, 0.49014, 0.52502]
+INFO: [Epoch 29] [group evaluate] [metrics] pred_score max: 1.000000, num of top-score tie (avg per sample): 2.0302
+INFO: [Epoch 29] [group evaluate] [metrics] top-score tie ratio (avg per sample): 2.0101%, samples with tied top (>1 item): 3.5176%
+INFO: [Epoch 29] Group [metrics], Hit@[1, 5, 10]: [0.4392, 0.6995, 0.79196], NDCG@[1, 5, 10]: [0.4392, 0.5795, 0.60913]
+INFO: [Epoch 29] [user evaluate] [metrics_first] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0445
+INFO: [Epoch 29] [user evaluate] [metrics_first] top-score tie ratio (avg per sample): 1.0341%, samples with tied top (>1 item): 4.3330%
+INFO: [Epoch 29] User [metrics_first], Hit@[1, 5, 10]: [0.27537, 0.68016, 0.78848], NDCG@[1, 5, 10]: [0.27537, 0.49235, 0.52776]
+INFO: [Epoch 29] [group evaluate] [metrics_first] pred_score max: 1.000000, num of top-score tie (avg per sample): 2.0302
+INFO: [Epoch 29] [group evaluate] [metrics_first] top-score tie ratio (avg per sample): 2.0101%, samples with tied top (>1 item): 3.5176%
+INFO: [Epoch 29] Group [metrics_first], Hit@[1, 5, 10]: [0.4392, 0.70754, 0.84221], NDCG@[1, 5, 10]: [0.4392, 0.58308, 0.62652]
+INFO: [Epoch 29] [user evaluate] [metrics_last] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0445
+INFO: [Epoch 29] [user evaluate] [metrics_last] top-score tie ratio (avg per sample): 1.0341%, samples with tied top (>1 item): 4.3330%
+INFO: [Epoch 29] User [metrics_last], Hit@[1, 5, 10]: [0.24629, 0.66933, 0.77936], NDCG@[1, 5, 10]: [0.24629, 0.47238, 0.50861]
+INFO: [Epoch 29] [group evaluate] [metrics_last] pred_score max: 1.000000, num of top-score tie (avg per sample): 2.0302
+INFO: [Epoch 29] [group evaluate] [metrics_last] top-score tie ratio (avg per sample): 2.0101%, samples with tied top (>1 item): 3.5176%
+INFO: [Epoch 29] Group [metrics_last], Hit@[1, 5, 10]: [0.41407, 0.66834, 0.73266], NDCG@[1, 5, 10]: [0.41407, 0.55262, 0.57317]
+INFO: [Epoch 29] [user evaluate] [metrics_tie_aware] pred_score max: 0.999999, num of top-score tie (avg per sample): 1.0445
+INFO: [Epoch 29] [user evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 1.0341%, samples with tied top (>1 item): 4.3330%
+INFO: [Epoch 29] User [metrics_tie_aware], Hit@[1, 5, 10]: [0.26064, 0.67484, 0.78392], NDCG@[1, 5, 10]: [0.26064, 0.48235, 0.51813]
+INFO: [Epoch 29] [group evaluate] [metrics_tie_aware] pred_score max: 1.000000, num of top-score tie (avg per sample): 2.0302
+INFO: [Epoch 29] [group evaluate] [metrics_tie_aware] top-score tie ratio (avg per sample): 2.0101%, samples with tied top (>1 item): 3.5176%
+INFO: [Epoch 29] Group [metrics_tie_aware], Hit@[1, 5, 10]: [0.42171, 0.66956, 0.73837], NDCG@[1, 5, 10]: [0.42171, 0.55631, 0.57827]
+INFO: 
+INFO: 
+INFO: ## Finishing Time: 2026-03-24 03:09:34
+INFO: = = = = = = = = = = = = = = = = = = = = 
+INFO: Done!
