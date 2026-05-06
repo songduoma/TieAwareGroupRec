@@ -192,12 +192,12 @@ done
 ```bash
 cd AlignGroup
 
-# Mafengwo (temp=[0.2], cl_weight=[0.1])
+# Mafengwo (temp=[0.2])
 for s in 0 1 2; do
   python -u main.py --dataset=Mafengwo --device=cuda:0 --seed=$s
 done
 
-# CAMRa2011 needs temp=[0.8]. Since parser uses list-typed args,
+# CAMRa2011 (temp=[0.8])
 # set default temp in main.py to [0.8] before running CAMRa2011.
 for s in 0 1 2; do
   python -u main.py --dataset=CAMRa2011 --device=cuda:0 --seed=$s
@@ -209,12 +209,12 @@ done
 ```bash
 cd DGGVAE
 
-# Mafengwo default: k=[50], temp=[0.2], g_layers=[3], cl_weight=[0.01], kl_weight=[0.1]
+# Mafengwo default: k=[50], temp=[0.2]
 for s in 0 1 2; do
   python -u main.py --dataset=Mafengwo --device=cuda:0 --seed=$s
 done
 
-# CAMRa2011 uses k=[60], temp=[0.4] in the paper runs.
+# CAMRa2011 default: k=[60], temp=[0.4]
 # Set these defaults in main.py before running CAMRa2011.
 for s in 0 1 2; do
   python -u main.py --dataset=CAMRa2011 --device=cuda:0 --seed=$s
