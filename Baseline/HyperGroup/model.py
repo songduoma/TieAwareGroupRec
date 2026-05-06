@@ -20,8 +20,8 @@ class HyperGroup(nn.Module):
         nn.init.normal_(self.user_embedding.weight, std=0.1)
         nn.init.normal_(self.item_embedding.weight, std=0.1)
 
-        # self.predictor = nn.Sequential(nn.Linear(emb_dim, 16), nn.ReLU(), nn.Linear(16, 1))
-        self.predictor = nn.Sequential(nn.Linear(emb_dim, 16), nn.ReLU(), nn.Linear(16, 1), nn.Sigmoid())
+        # self.predictor = nn.Sequential(nn.Linear(emb_dim, 16), nn.ReLU(), nn.Linear(16, 1), nn.Sigmoid())
+        self.predictor = nn.Sequential(nn.Linear(emb_dim, 16), nn.ReLU(), nn.Linear(16, 1))
 
     def user_forward(self, users, items):
         user_emb = self.user_embedding(users)
