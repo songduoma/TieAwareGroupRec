@@ -62,7 +62,7 @@ def training(u_loader, g_loader, epoch, type_m="group", group_member_dict=None, 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--seed", type=int, default=2)
     parser.add_argument("--dataset", type=str, help="[Mafengwo, CAMRa2011, Weeplaces]", default="CAMRa2011") # CAMRa2011, Mafengwo, Weeplaces
     parser.add_argument("--device", type=str, help="[cuda:0, ..., cpu]", default="cuda:0")
 

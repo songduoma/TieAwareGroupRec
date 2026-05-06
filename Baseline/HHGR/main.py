@@ -57,7 +57,7 @@ parser.add_argument("--device", type=str, default="cuda:0")
 # Model settings.
 parser.add_argument('--emb_dim', type=int, default=64, help='layer size')
 parser.add_argument('--num_negatives', type=int, default=10, help='# negative users sampled per group')
-parser.add_argument('--seed', type=int, default=1111, help='random seed for reproducibility')
+parser.add_argument('--seed', type=int, default=1112, help='random seed for reproducibility')
 
 args = parser.parse_args()
 set_seed(args.seed)

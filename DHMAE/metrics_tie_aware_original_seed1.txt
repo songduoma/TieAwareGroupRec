@@ -1,0 +1,41 @@
+[CAMRa2011]
+metrics.py
+User->HR@[1, 5, 10, 20, 50]: [0.50897, 0.50897, 0.50897, 0.50897, 0.50897], NDCG@[1, 5, 10, 20, 50]: [0.50897, 0.50897, 0.50897, 0.50897, 0.50897]
+Group->HR@[1, 5, 10, 20, 50]: [0.97793, 0.97793, 0.97793, 0.97793, 0.97793], NDCG@[1, 5, 10, 20, 50]: [0.97793, 0.97793, 0.97793, 0.97793, 0.97793]
+
+metrics_first.py
+User->HR@[1, 5, 10, 20, 50]: [0.50897, 0.50897, 0.50897, 0.50897, 0.50897], NDCG@[1, 5, 10, 20, 50]: [0.50897, 0.50897, 0.50897, 0.50897, 0.50897]
+Group->HR@[1, 5, 10, 20, 50]: [0.97793, 0.97793, 0.97793, 0.97793, 0.97793], NDCG@[1, 5, 10, 20, 50]: [0.97793, 0.97793, 0.97793, 0.97793, 0.97793]
+
+metrics_last.py
+User->HR@[1, 5, 10, 20, 50]: [0.0, 0.0, 0.00133, 0.00963, 0.0113], NDCG@[1, 5, 10, 20, 50]: [0.0, 0.0, 0.00047, 0.00267, 0.00303]
+Group->HR@[1, 5, 10, 20, 50]: [0.0, 0.0, 0.0, 0.0, 0.66276], NDCG@[1, 5, 10, 20, 50]: [0.0, 0.0, 0.0, 0.0, 0.12216]
+
+metrics_tie_aware.py
+[metrics_tie_aware.py/user final evaluate] pred_score max: 1.000000, num of top-score tie (avg per sample): 319.5249
+[metrics_tie_aware.py/user final evaluate] top-score tie ratio (avg per sample): 4.2583%, samples with tied top (>1 item): 100.0000%
+[metrics_tie_aware.py/group final evaluate] pred_score max: 1.000000, num of top-score tie (avg per sample): 5128.0759
+[metrics_tie_aware.py/group final evaluate] top-score tie ratio (avg per sample): 70.1021%, samples with tied top (>1 item): 100.0000%
+User->HR@[1, 5, 10, 20, 50]: [0.00186, 0.00931, 0.01862, 0.03723, 0.09305], NDCG@[1, 5, 10, 20, 50]: [0.00186, 0.00549, 0.00846, 0.01311, 0.02401]
+Group->HR@[1, 5, 10, 20, 50]: [0.00019, 0.00097, 0.00193, 0.00387, 0.00967], NDCG@[1, 5, 10, 20, 50]: [0.00019, 0.00057, 0.00088, 0.00136, 0.00249]
+
+[Mafengwo]
+metrics.py
+User->HR@[1, 5, 10, 20, 50]: [0.67788, 0.67902, 0.70639, 0.77594, 0.88312], NDCG@[1, 5, 10, 20, 50]: [0.67788, 0.67835, 0.68691, 0.70435, 0.72625]
+Group->HR@[1, 5, 10, 20, 50]: [0.96482, 0.96482, 0.96482, 0.96482, 0.96482], NDCG@[1, 5, 10, 20, 50]: [0.96482, 0.96482, 0.96482, 0.96482, 0.96482]
+
+metrics_first.py
+User->HR@[1, 5, 10, 20, 50]: [0.67788, 0.67902, 0.70639, 0.77594, 0.88312], NDCG@[1, 5, 10, 20, 50]: [0.67788, 0.67835, 0.68691, 0.70435, 0.72625]
+Group->HR@[1, 5, 10, 20, 50]: [0.96482, 0.96482, 0.96482, 0.96482, 0.96482], NDCG@[1, 5, 10, 20, 50]: [0.96482, 0.96482, 0.96482, 0.96482, 0.96482]
+
+metrics_last.py
+User->HR@[1, 5, 10, 20, 50]: [0.0, 0.00114, 0.00114, 0.00114, 0.00285], NDCG@[1, 5, 10, 20, 50]: [0.0, 0.00061, 0.00061, 0.00061, 0.00095]
+Group->HR@[1, 5, 10, 20, 50]: [0.0, 0.0, 0.0, 0.0, 0.99598], NDCG@[1, 5, 10, 20, 50]: [0.0, 0.0, 0.0, 0.0, 0.17813]
+
+metrics_tie_aware.py
+[metrics_tie_aware.py/user final evaluate] pred_score max: 1.000000, num of top-score tie (avg per sample): 14.9795
+[metrics_tie_aware.py/user final evaluate] top-score tie ratio (avg per sample): 1.0069%, samples with tied top (>1 item): 99.4299%
+[metrics_tie_aware.py/group final evaluate] pred_score max: 1.000000, num of top-score tie (avg per sample): 888.9779
+[metrics_tie_aware.py/group final evaluate] top-score tie ratio (avg per sample): 58.8573%, samples with tied top (>1 item): 100.0000%
+User->HR@[1, 5, 10, 20, 50]: [0.05571, 0.27271, 0.50531, 0.74475, 0.88312], NDCG@[1, 5, 10, 20, 50]: [0.05571, 0.16186, 0.23652, 0.29755, 0.32614]
+Group->HR@[1, 5, 10, 20, 50]: [0.00119, 0.00596, 0.01192, 0.02384, 0.05959], NDCG@[1, 5, 10, 20, 50]: [0.00119, 0.00351, 0.00542, 0.00839, 0.01537]

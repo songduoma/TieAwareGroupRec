@@ -33,7 +33,7 @@ def init_logger(dataset):
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", type=str, default="Mafengwo")
-parser.add_argument("--seed", type=int, default=0)
+parser.add_argument("--seed", type=int, default=2)
 parser.add_argument("--device", type=str, default="cuda:0")
 
 parser.add_argument("--lr", type=float, default=1e-3)

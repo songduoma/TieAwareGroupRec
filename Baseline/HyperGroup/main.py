@@ -17,7 +17,7 @@ def set_seed(seed):
     random.seed(seed)
     torch.manual_seed(seed)  # cpu
     torch.cuda.manual_seed_all(seed)  # gpu
-    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.deterministic = False
 
 
 def get_local_time():
@@ -67,7 +67,7 @@ def training(train_loader, epoch, type_m='group'):
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--seed", type=int, default=0)
+parser.add_argument("--seed", type=int, default=2)
 parser.add_argument("--device", type=str, default="cuda:0")
 
 # lr - 1e-3

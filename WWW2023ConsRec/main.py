@@ -49,7 +49,7 @@ def training(train_loader, epoch, type_m="group"):
 
         optimizer.zero_grad()
         if args.loss_type == "BPR":
-            loss = torch.mean(torch.nn.functional.softplus(neg_prediction - pos_prediction))
+            loss = torch.mean(torch.nn.functional.softplus((neg_prediction - pos_prediction) / args.tau))
         else:
             loss = torch.mean((pos_prediction - neg_prediction - 1) ** 2)
 
@@ -79,7 +79,7 @@ if __name__ == "__main__":
     parser.add_argument("--patience", type=int, default=4)
     parser.add_argument("--predictor", type=str, default="MLP")
     parser.add_argument("--loss_type", type=str, default="BPR")
-
+    parser.add_argument("--tau", type=float, default=2.0)
     args = parser.parse_args()
     set_seed(args.seed)
 

@@ -42,7 +42,7 @@ python main.py --dataset=Mafengwo --predictor=MLP --learning_rate=0.0001 --num_n
 
 # For CAMRa2011 
 
-python main.py --dataset=CAMRa2011 --predictor=DOT --learning_rate=0.001 --num_negatives=2 --layers=2 --epoch=30
+python main.py --dataset=CAMRa2011 --predictor=MLP --learning_rate=0.001 --num_negatives=2 --layers=2 --epoch=30
 ```
 For more running options, please refer to `main.py`
 

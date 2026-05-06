@@ -101,7 +101,7 @@ def set_seed(seed):
     random.seed(seed)
     torch.manual_seed(seed) # cpu
     torch.cuda.manual_seed_all(seed)  # gpu
-    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.deterministic = False
 
 if __name__ == '__main__':
     config = Config()
@@ -111,7 +111,7 @@ if __name__ == '__main__':
     logging.info('= ' * 20)
     logging.info('## Starting Time: %s', datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
-    set_seed(1)
+    set_seed(2)
 
     dataset = GDataset(config.user_dataset, config.group_dataset, config.user_in_group_path, config.num_negatives)
 

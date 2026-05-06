@@ -99,7 +99,8 @@ class HGR(nn.Module):
 
             new_emb = torch.cat((element_emb, group_emb, item_emb), dim=1)
             y = self.predict(new_emb)
-            # y = torch.matmul(group_emb.unsqueeze(1), item_emb.unsqueeze(2)).squeeze()
+            # y = torch.sigmoid(self.predict(new_emb))
+
             return y
 
         else:
@@ -108,7 +109,7 @@ class HGR(nn.Module):
             element_emb = torch.mul(user_emb, item_emb)
             new_emb = torch.cat((element_emb, user_emb, item_emb), dim=1)
             y = self.predict(new_emb)
-            # y = torch.matmul(user_emb.unsqueeze(1), item_emb.unsqueeze(2)).squeeze()
+            # y = torch.sigmoid(self.predict(new_emb))
             return y
 
 class HyperConv(nn.Module):

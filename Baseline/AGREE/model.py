@@ -38,6 +38,7 @@ class AGREE(nn.Module):
 
         element_embed = torch.mul(users_embed, items_embed)
         return self.predictor(torch.cat((element_embed, users_embed, items_embed), dim=1))
+        # return torch.sigmoid(self.predictor(torch.cat((element_embed, users_embed, items_embed), dim=1)))
 
     def group_forward(self, groups, items):
         device = items.device
@@ -55,6 +56,7 @@ class AGREE(nn.Module):
         items_embed = self.item_embedding(items)
         element_embed = torch.mul(groups_emb, items_embed)
         return self.predictor(torch.cat((element_embed, groups_emb, items_embed), dim=1))
+        # return torch.sigmoid(self.predictor(torch.cat((element_embed, groups_emb, items_embed), dim=1)))
 
     def forward(self, groups, users, items):
         if groups is not None:

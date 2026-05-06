@@ -99,8 +99,8 @@ def parse_log(log_path):
 def pick_best_epoch(epoch_records):
     candidates = []
     for record in epoch_records:
-        topk = record.get("group_metrics_ndcg_topk", [])
-        vals = record.get("group_metrics_ndcg_values", [])
+        topk = record.get("group_metrics_tie_aware_ndcg_topk", [])
+        vals = record.get("group_metrics_tie_aware_ndcg_values", [])
         if 10 not in topk:
             continue
         idx = topk.index(10)
@@ -109,7 +109,7 @@ def pick_best_epoch(epoch_records):
         candidates.append((vals[idx], record))
 
     if not candidates:
-        raise ValueError("Cannot find any Group NDCG@10 in this log.")
+        raise ValueError("Cannot find any Group NDCG@10 in metrics_tie_aware for this log.")
 
     best_ndcg10, best_record = max(candidates, key=lambda x: x[0])
     return best_ndcg10, best_record
@@ -128,16 +128,30 @@ def print_best_for_log(log_path):
     run_display = best["run_idx"] if best["run_idx"] > 0 else 1
 
     print(f"Log: {log_path}")
-    print(f"Best epoch by Group NDCG@10 (metrics.py): run={run_display}, epoch={best['epoch']}")
-    print(f"Group NDCG@10 (metrics.py): {best_ndcg10:.5f}")
+    print(f"Best epoch by Group NDCG@10 (metrics_tie_aware): run={run_display}, epoch={best['epoch']}")
+    print(f"Group NDCG@10 (metrics_tie_aware): {best_ndcg10:.5f}")
     print()
     print(f"Group loss: {best.get('group_loss', float('nan')):.5f} (time: {best.get('group_time', float('nan')):.2f}s)")
     print(f"User  loss: {best.get('user_loss', float('nan')):.5f} (time: {best.get('user_time', float('nan')):.2f}s)")
     print()
-    print("Group Hit (metrics):", format_metrics(best.get("group_metrics_hit_topk", []), best.get("group_metrics_hit_values", [])))
-    print("Group NDCG (metrics):", format_metrics(best.get("group_metrics_ndcg_topk", []), best.get("group_metrics_ndcg_values", [])))
-    print("User  Hit (metrics):", format_metrics(best.get("user_metrics_hit_topk", []), best.get("user_metrics_hit_values", [])))
-    print("User  NDCG (metrics):", format_metrics(best.get("user_metrics_ndcg_topk", []), best.get("user_metrics_ndcg_values", [])))
+    print(
+        "Group Hit (metrics_tie_aware):",
+        format_metrics(best.get("group_metrics_tie_aware_hit_topk", []), best.get("group_metrics_tie_aware_hit_values", [])),
+    )
+    print(
+        "Group NDCG (metrics_tie_aware):",
+        format_metrics(
+            best.get("group_metrics_tie_aware_ndcg_topk", []), best.get("group_metrics_tie_aware_ndcg_values", [])
+        ),
+    )
+    print(
+        "User  Hit (metrics_tie_aware):",
+        format_metrics(best.get("user_metrics_tie_aware_hit_topk", []), best.get("user_metrics_tie_aware_hit_values", [])),
+    )
+    print(
+        "User  NDCG (metrics_tie_aware):",
+        format_metrics(best.get("user_metrics_tie_aware_ndcg_topk", []), best.get("user_metrics_tie_aware_ndcg_values", [])),
+    )
 
     if "group_metrics_after_hit_topk" in best:
         print("Group Hit (metrics_after):", format_metrics(best.get("group_metrics_after_hit_topk", []), best.get("group_metrics_after_hit_values", [])))
@@ -172,7 +186,7 @@ def collect_logs(target_path):
 def main():
     parser = argparse.ArgumentParser(
         description=(
-            "Print metrics for the epoch with highest Group NDCG@10 from metrics.py. "
+            "Print metrics for the epoch with highest Group NDCG@10 from metrics_tie_aware. "
             "Input can be a .log file, a log directory, or a project directory containing log/."
         )
     )

@@ -58,7 +58,7 @@ def training(train_loader, epoch, type_m="group", group_member_dict=None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--seed", type=int, default=2)
     parser.add_argument("--dataset", type=str, help="[Mafengwo, CAMRa2011]", default="CAMRa2011") # CAMRa2011, Mafengwo
     parser.add_argument("--device", type=str, help="[cuda:0, ..., cpu]", default="cuda:0")
 
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     parser.add_argument("--patience", type=int, default=4)
     parser.add_argument("--predictor", type=str, default="MLP")
     parser.add_argument("--loss_type", type=str, default="BPR")
-    parser.add_argument("--temp", type=list, default=[0.8])
+    parser.add_argument("--temp", type=list, default=[0.2]) # CAMRa2011: 0.8 is the best, Mafengwo: 0.2 is the best
     parser.add_argument("--cl_weight", type=list, default=[0.1])
 
 

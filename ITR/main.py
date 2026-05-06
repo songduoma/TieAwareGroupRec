@@ -175,7 +175,7 @@ def training(train_loader, epoch, type_m="group"):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--seed", type=int, default=2)
     parser.add_argument("--dataset", type=str, help="[Mafengwo, CAMERa2011]", default="Mafengwo")
     parser.add_argument("--device", type=str, help="[cuda:0, ..., cpu]", default="cuda:0")
 

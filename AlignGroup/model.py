@@ -139,8 +139,10 @@ class AlignGroup(nn.Module):
     def BPR_loss(self, g_emb, i_emb_pos, i_emb_neg):
         # For CAMRa2011, we use DOT mode to avoid the dead ReLU
         if self.predictor_type == "MLP":
-            pos_prediction = self.predict(g_emb * i_emb_pos)
+            pos_prediction = self.predict(g_emb * i_emb_pos) 
             neg_prediction = self.predict(g_emb * i_emb_neg)
+            # pos_prediction = torch.sigmoid(self.predict(g_emb * i_emb_pos))
+            # neg_prediction = torch.sigmoid(self.predict(g_emb * i_emb_neg))
         else:
             pos_prediction = torch.sum(g_emb * i_emb_pos, dim=-1)
             neg_prediction = torch.sum(g_emb * i_emb_neg, dim=-1)
@@ -163,6 +165,8 @@ class AlignGroup(nn.Module):
         if self.predictor_type == "MLP":
             pos_prediction = self.predict(u_emb * i_emb_pos)
             neg_prediction = self.predict(u_emb * i_emb_neg)
+            # pos_prediction = torch.sigmoid(self.predict(u_emb * i_emb_pos))
+            # neg_prediction = torch.sigmoid(self.predict(u_emb * i_emb_neg))
         else:
             pos_prediction = torch.sum(u_emb * i_emb_pos, dim=-1)
             neg_prediction = torch.sum(u_emb * i_emb_neg, dim=-1)

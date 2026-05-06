@@ -1,7 +1,7 @@
 class Config(object):
     def __init__(self):
-        self.path = '../data/CAMRa2011/'
-        #self.path = '../data/Mafengwo/'
+        #self.path = '../data/CAMRa2011/'
+        self.path = '../data/Mafengwo/'
         self.user_dataset = self.path + 'userRating'
         self.group_dataset = self.path + 'groupRating'
         self.user_in_group_path = self.path + 'groupMember.txt'

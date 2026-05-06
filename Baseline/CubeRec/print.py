@@ -8,8 +8,13 @@ LOSS_PATTERN = re.compile(
 )
 
 METRIC_PATTERN = re.compile(
-    r"\[Epoch\s+(\d+)\]\s+(Group|User)(?:\s+\[([^\]]+)\])?,\s+Hit@\[(.*?)\]:\s+\[(.*?)\],\s+NDCG@\[(.*?)\]:\s+\[(.*?)\]"
+    r"(?:\[(?:Epoch\s+(\d+)|Evaluate)\])\s+"
+    r"(Group|User)(?:\s+\[([^\]]+)\])?\s*,?\s*"
+    r"Hit@\[(.*?)\]\s*:?\s*\[(.*?)\],\s*"
+    r"NDCG@\[(.*?)\]\s*:?\s*\[(.*?)\]"
 )
+
+EPOCH_HEADER_PATTERN = re.compile(r"\[Epoch\s+(\d+)\]")
 
 
 def _parse_num_list(text):
@@ -29,6 +34,7 @@ def _parse_int_list(text):
 def parse_log(log_path):
     records = {}
     run_idx = 0
+    current_epoch = None
 
     with log_path.open("r", encoding="utf-8") as f:
         for raw_line in f:
@@ -37,6 +43,10 @@ def parse_log(log_path):
             if "Idx =" in line:
                 run_idx += 1
                 continue
+
+            epoch_header_match = EPOCH_HEADER_PATTERN.search(line)
+            if epoch_header_match:
+                current_epoch = int(epoch_header_match.group(1))
 
             loss_match = LOSS_PATTERN.search(line)
             if loss_match:
@@ -53,7 +63,13 @@ def parse_log(log_path):
 
             metric_match = METRIC_PATTERN.search(line)
             if metric_match:
-                epoch = int(metric_match.group(1))
+                epoch_str = metric_match.group(1)
+                if epoch_str is not None:
+                    epoch = int(epoch_str)
+                elif current_epoch is not None:
+                    epoch = current_epoch
+                else:
+                    continue
                 role = metric_match.group(2).lower()
                 source = (metric_match.group(3) or "metrics").strip().lower()
                 hit_topk = _parse_int_list(metric_match.group(4))

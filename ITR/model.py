@@ -141,6 +141,7 @@ class ConsRec(nn.Module):
 
     
         return self.predict(g_emb * i_emb)
+        # return torch.sigmoid(self.predict(g_emb * i_emb))
 
 
     def user_forward(self, user_inputs, item_inputs):
@@ -149,3 +150,4 @@ class ConsRec(nn.Module):
         i_emb = self.item_embedding(item_inputs)
 
         return self.predict(u_emb * i_emb)
+        # return torch.sigmoid(self.predict(u_emb * i_emb))

@@ -345,6 +345,8 @@ class DGGVAE(nn.Module):
         if self.predictor_type == "MLP":
             pos_prediction = self.predict(g_emb * i_emb_pos)
             neg_prediction = self.predict(g_emb * i_emb_neg)
+            # pos_prediction = torch.sigmoid(self.predict(g_emb * i_emb_pos))
+            # neg_prediction = torch.sigmoid(self.predict(g_emb * i_emb_neg))
         else:
             pos_prediction = torch.sum(g_emb * i_emb_pos, dim=-1)
             neg_prediction = torch.sum(g_emb * i_emb_neg, dim=-1)
@@ -371,6 +373,8 @@ class DGGVAE(nn.Module):
         if self.predictor_type == "MLP":
             pos_prediction = self.predict(u_emb * i_emb_pos)
             neg_prediction = self.predict(u_emb * i_emb_neg)
+            # pos_prediction = torch.sigmoid(self.predict(u_emb * i_emb_pos))
+            # neg_prediction = torch.sigmoid(self.predict(u_emb * i_emb_neg))
         else:
             pos_prediction = torch.sum(u_emb * i_emb_pos, dim=-1)
             neg_prediction = torch.sum(u_emb * i_emb_neg, dim=-1)

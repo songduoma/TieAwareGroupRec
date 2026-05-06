@@ -17,7 +17,7 @@ def set_seed(seed):
     random.seed(seed)
     torch.manual_seed(seed)  # cpu
     torch.cuda.manual_seed_all(seed)  # gpu
-    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.deterministic = False
 
 
 def get_local_time():
@@ -67,7 +67,7 @@ def train(train_loader, epoch_id, lr, type_m='user'):
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", type=str, help="[Mafengwo, CAMRa2011]", default="Mafengwo")
-parser.add_argument("--seed", type=int, default=0)
+parser.add_argument("--seed", type=int, default=2)
 parser.add_argument("--device", type=str, help="[cuda:0, ..., cpu]", default="cuda:0")
 
 parser.add_argument("--emb_dim", type=int, default=32)

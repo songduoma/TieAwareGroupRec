@@ -64,7 +64,7 @@ def training(model, optimizer, train_loader, type_m):
 if __name__ == "__main__":
     # load configuration
     parser = argparse.ArgumentParser()
-    parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--seed", type=int, default=1)
     parser.add_argument(
         "--dataset",
         type=str,
