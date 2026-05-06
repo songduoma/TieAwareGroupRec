@@ -137,7 +137,7 @@ Primary training GPUs for this paper were RTX 3090 and RTX A5000.
 
 ## 6) Reproduction
 
-To inspect archived results without retraining, use each method's `print.py` and `print_aware.py` on the bundled log folders (for `ITR`, use `AlignGroup/print.py ITR` and `AlignGroup/print_aware.py ITR`).
+To inspect archived results without retraining, use each method's `print.py` and `print_aware.py` on the bundled log folders or text files.
 
 ## 6.1 Full rerun: Retrain and regenerate logs
 
