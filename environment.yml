@@ -1,0 +1,19 @@
+name: gr_reproducibility
+
+channels:
+  - defaults
+
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu121
+      - torch==2.5.1
+      - torchvision==0.20.1
+      - torchaudio==2.5.1
+      - numpy==1.26.4
+      - scipy==1.13.1
+      - scikit-learn==1.6.1
+      - tqdm==4.67.1
+      - tensorboardX==2.6.4
+      - torch-geometric==2.6.1
